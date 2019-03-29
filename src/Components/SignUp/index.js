@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
+import { withFirebase } from '../Firebase/firebase.js';
+import { Link, withRouter } from 'react-router-dom';
 import * as ROUTES from '../../Constants/routes';
 
 const INITIAL_STATE = {
@@ -18,7 +18,7 @@ const SignUpPage = () => (
     </div>
 );
 
-class SignUpForm extends Component {
+class SignUpFormBase extends Component {
     constructor(props) {
         super(props);
         this.state = { ...INITIAL_STATE };
@@ -31,13 +31,13 @@ class SignUpForm extends Component {
             .doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE });
+                this.props.history.push(ROUTES.HOME);
             })
             .catch(error => {
                 this.setState({ error });
             });
 
         event.preventDefault();
-
     };
 
     onChange = event => {
@@ -45,39 +45,53 @@ class SignUpForm extends Component {
     };
 
     render() {
+        const {
+            username,
+            email,
+            passwordOne,
+            passwordTwo,
+            error,
+        } = this.state;
+
+        const isInvalid =
+            passwordOne !== passwordTwo ||
+            passwordOne === '' ||
+            email === '' ||
+            username === '';
+
         return (
             <form onSubmit={this.onSubmit}>
                 <input
                     name="username"
-                    value={this.username}
+                    value={username}
                     onChange={this.onChange}
                     type="text"
                     placeholder="Full Name"
                 />
                 <input
                     name="email"
-                    value={this.email}
+                    value={email}
                     onChange={this.onChange}
                     type="text"
                     placeholder="Email Address"
                 />
                 <input
                     name="passwordOne"
-                    value={this.passwordOne}
+                    value={passwordOne}
                     onChange={this.onChange}
                     type="password"
                     placeholder="Password"
                 />
                 <input
                     name="passwordTwo"
-                    value={this.passwordTwo}
+                    value={passwordTwo}
                     onChange={this.onChange}
                     type="password"
                     placeholder="Confirm Password"
                 />
-                <button type="submit">Sign Up</button>
+                <button disabled={isInvalid} type="submit">Sign Up </button>
 
-                {this.error && <p>{this.error.message}</p>}
+                {error && <p>{error.message}</p>}
             </form>
         );
     }
@@ -88,6 +102,9 @@ const SignUpLink = () => (
         Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
     </p>
 );
+
+// Higher order component
+const SignUpForm = withRouter(withFirebase(SignUpFormBase));
 
 export default SignUpPage;
 
