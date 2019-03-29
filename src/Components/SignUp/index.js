@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withFirebase } from '../Firebase/firebase.js';
 import { Link, withRouter } from 'react-router-dom';
 import * as ROUTES from '../../Constants/routes';
+import { compose } from 'recompose';
 
 const INITIAL_STATE = {
     username: '',
@@ -103,8 +104,11 @@ const SignUpLink = () => (
     </p>
 );
 
-// Higher order component
-const SignUpForm = withRouter(withFirebase(SignUpFormBase));
+// Higher order component organized with recompose package
+const SignUpForm = compose(
+    withRouter,
+    withFirebase,
+)(SignUpFormBase);
 
 export default SignUpPage;
 
