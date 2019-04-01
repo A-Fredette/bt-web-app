@@ -2,6 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../Constants/routes';
 
+const HeaderNavigation = () => (
+    <div className='headerNavigation'>
+        <span>
+            <Link to={ROUTES.HOME}>Home</Link>
+        </span>
+        <span>
+            <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+        </span>
+    </div>
+);
 
 const Navigation = () => (
     <div>
@@ -32,3 +42,4 @@ const Navigation = () => (
 );
 
 export default Navigation;
+export { HeaderNavigation };
