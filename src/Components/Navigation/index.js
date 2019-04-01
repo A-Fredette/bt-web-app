@@ -1,44 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../Constants/routes';
+import Typography from '@material-ui/core/Typography';
 
 const HeaderNavigation = () => (
-    <div className='headerNavigation'>
+    <Typography>
+        <div className='headerNavigation'>
         <span>
             <Link to={ROUTES.HOME}>Home</Link>
         </span>
-        <span>
+            <span>
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
         </span>
-    </div>
+        </div>
+    </Typography>
 );
 
 const Navigation = () => (
-    <div>
-        <ul>
-            <li>
-                <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-            </li>
-            <li>
-                <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
-            </li>
-            <li>
-                <Link to={ROUTES.LANDING}>Landing</Link>
-            </li>
-            <li>
-                <Link to={ROUTES.HOME}>Home</Link>
-            </li>
-            <li>
-                <Link to={ROUTES.ACCOUNT}>Account</Link>
-            </li>
-            <li>
-                <Link to={ROUTES.ADMIN}>Admin</Link>
-            </li>
-            <li>
-                <Link to={ROUTES.PASSWORD_FORGET}>Forgot PW?</Link>
-            </li>
-        </ul>
-    </div>
+    <Typography>
+        <div>
+            <ul>
+                <li>
+                    <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+                </li>
+                <li>
+                    <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+                </li>
+                <li>
+                    <Link to={ROUTES.LANDING}>Landing</Link>
+                </li>
+                <li>
+                    <Link to={ROUTES.HOME}>Home</Link>
+                </li>
+                <li>
+                    <Link to={ROUTES.ACCOUNT}>Account</Link>
+                </li>
+                <li>
+                    <Link to={ROUTES.ADMIN}>Admin</Link>
+                </li>
+                <li>
+                    <Link to={ROUTES.PASSWORD_FORGET}>Forgot PW?</Link>
+                </li>
+            </ul>
+        </div>
+    </Typography>
 );
 
 export default Navigation;
