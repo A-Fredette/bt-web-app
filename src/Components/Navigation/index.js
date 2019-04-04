@@ -27,6 +27,9 @@ const Navigation = () => (
             <li>
                 <Link to={ROUTES.PASSWORD_FORGET}>Forgot PW?</Link>
             </li>
+            <li>
+                <Link to={ROUTES.WEEKLY_REVIEW}>Weekly Review</Link>
+            </li>
         </ul>
     </div>
 );

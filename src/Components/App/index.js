@@ -14,6 +14,7 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
+import WeeklyReview from '../WeeklyReview';
 
 import * as ROUTES from '../../Constants/routes';
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path={ROUTES.HOME} component={HomePage} />
             <Route path={ROUTES.ACCOUNT} component={AccountPage} />
             <Route path={ROUTES.ADMIN} component={AdminPage} />
+            <Route path={ROUTES.WEEKLY_REVIEW} component={WeeklyReview} />
         </Router>
         <h1>App</h1>
     </div>
