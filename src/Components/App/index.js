@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './app.scss';
 
 import {
@@ -15,28 +15,57 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import WeeklyReview from '../WeeklyReview';
+import TopNavigation from '../Navbar';
 
 import * as ROUTES from '../../Constants/routes';
 
+import { withFirebase } from '../Firebase/firebase';
 
+class App extends Component {
+    constructor(props) {
+        super(props);
 
-const App = () => (
-    <div className="app-container">
-        <Router>
-            <Navigation />
-            <hr />
+        this.state =  {
+            authUser: null,
+        };
+    }
 
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-            <Route path={ROUTES.HOME} component={HomePage} />
-            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-            <Route path={ROUTES.ADMIN} component={AdminPage} />
-            <Route path={ROUTES.WEEKLY_REVIEW} component={WeeklyReview} />
-        </Router>
-        <h1>App</h1>
-    </div>
-);
+    componentDidMount() {
+        this.listener = this.props.firebase.auth.onAuthStateChanged(
+            authUser => {
+                authUser
+                    ? this.setState({ authUser })
+                    : this.setState({ authUser: null });
+            },
+        );
+    }
 
-export default App;
+    // Added to avoid memory leaks from an unnecessary listener
+    componentWillUnmount() {
+        this.listener();
+    }
+
+    render() {
+        return(
+            <div className="app-container">
+                <TopNavigation />
+                <Router>
+                    <Navigation authUser={this.state.authUser} />
+                    <hr />
+
+                    <Route exact path={ROUTES.LANDING} component={LandingPage} />
+                    <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+                    <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+                    <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+                    <Route path={ROUTES.HOME} component={HomePage} />
+                    <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+                    <Route path={ROUTES.ADMIN} component={AdminPage} />
+                    <Route path={ROUTES.WEEKLY_REVIEW} component={WeeklyReview} />
+                </Router>
+                <h1>App</h1>
+            </div>
+        )
+    }
+}
+
+export default withFirebase(App);
