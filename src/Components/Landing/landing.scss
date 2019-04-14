@@ -1,0 +1,22 @@
+.jumbotron {
+  background-color: white;
+}
+
+.heroTop {
+  background-color: red;
+  background-image: url('../../Assets/images/backlit.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 80% 20%;
+  height: 500px;
+
+  .heroTop-container {
+    color: #FFF;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 3.5em;
+    margin-top: 1.5em;
+  }
+}
