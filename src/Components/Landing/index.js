@@ -2,6 +2,7 @@ import React from 'react';
 import './landing.scss'
 import PropTypes from 'prop-types';
 import Footer from './../Footer';
+import FontAwesome from 'react-fontawesome';
 import {
     Jumbotron,
     Container,
@@ -17,9 +18,7 @@ const FullWidth = (props) => (
     <Jumbotron {...props.size} className={props.className}>
         <Container className={props.className+'-container'}>
             <h4>{props.heading}</h4>
-            <h5>
-                {props.text}
-            </h5>
+            <h5>{props.text}</h5>
             { props.buttonText ? <Button variant={props.buttonColor}>{props.buttonText}</Button> : null }
         </Container>
         {props.containedComponent}
@@ -109,7 +108,11 @@ export default class Landing extends React.Component {
     render() {
         return (
             <div className='landingPage'>
-
+                <FontAwesome
+                    name='rocket'
+                    size='2x'
+                    spin
+                />
                     <FullWidth
                         className={'heroTop'}
                         heading={'Meet Your Personal Board of Advisers'}
