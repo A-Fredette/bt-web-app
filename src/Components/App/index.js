@@ -48,11 +48,8 @@ class App extends Component {
     render() {
         return(
             <div className="app-container">
-                <TopNavigation />
                 <Router>
-                    <Navigation authUser={this.state.authUser} />
-                    <hr />
-
+                    <TopNavigation authUser={this.state.authUser} />
                     <Route exact path={ROUTES.LANDING} component={LandingPage} />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                     <Route path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -62,7 +59,6 @@ class App extends Component {
                     <Route path={ROUTES.ADMIN} component={AdminPage} />
                     <Route path={ROUTES.WEEKLY_REVIEW} component={WeeklyReview} />
                 </Router>
-                <h1>App</h1>
             </div>
         )
     }
