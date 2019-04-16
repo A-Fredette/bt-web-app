@@ -63,7 +63,7 @@ QuoteLine.propTypes = {
 };
 
 const SingleCard = (props) => (
-    <Card bg='info' className={props.cardClassName} style={{ width: '18rem' }}>
+    <Card className={props.cardClassName} style={{ width: '18rem' }}>
         {/*<Card.Img variant="top" src={props.image} className={props.imgClassName}/>*/}
         <FontAwesome
             name={props.fontAwesome}
@@ -129,7 +129,7 @@ export default class Landing extends React.Component {
                 />
                 <FullWidth
                     className={'heroTop'}
-                    heading={'Meet Your Personal Board of Advisers'}
+                    heading={'Your Personal Board of Advisers'}
                     text={'Community fueled accountability, support and personal growth.'}
                     buttonText={'Learn More'}
                 />
@@ -159,8 +159,8 @@ export default class Landing extends React.Component {
                         />
                         <SingleCard
                             fontAwesome={'users'}
-                            heading={'Find Your Tribe'}
-                            text={'Benefit from exclusive quarterly meetings and offers with some of the brightest minds in high performance.'}
+                            heading={'Find Your Tribe!'}
+                            text={'Build supporting relationships and communities with the people that share your dream, whatever that dream might be.'}
                             buttonText={'Optional Button'}
                         />
                     </CardDeck>
