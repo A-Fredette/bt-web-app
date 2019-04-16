@@ -1,7 +1,6 @@
 .jumbotron {
   background-color: white;
 }
-
 .heroTop {
   background-color: red;
   background-image: url('../../Assets/images/backlit.jpg');
@@ -18,5 +17,43 @@
   h4 {
     font-size: 3.5em;
     margin-top: 1.5em;
+  }
+}
+
+.quoteLine {
+  text-align: center;
+  padding: 1.5em;
+
+  h4 {
+    font-size: 1.3em;
+    margin: 0;
+  }
+}
+
+.card-desk {
+  margin: 0;
+}
+
+.card-row {
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin-top: 30px;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  .fa {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    color: rgb(52, 152, 219);
+    margin: 10px auto 0 auto;
+    font-size: 4em;
+    background-color: white;
+    border-radius: 100%;
+    padding: 20px;
   }
 }

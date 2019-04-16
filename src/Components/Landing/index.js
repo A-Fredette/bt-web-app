@@ -10,12 +10,13 @@ import {
     Card,
     Row,
     Col,
-    Image
+    Image,
+    CardDeck
     }
     from 'react-bootstrap';
 
 const FullWidth = (props) => (
-    <Jumbotron {...props.size} className={props.className}>
+    <Jumbotron className={props.className}>
         <Container className={props.className+'-container'}>
             <h4>{props.heading}</h4>
             <h5>{props.text}</h5>
@@ -39,26 +40,36 @@ FullWidth.propTypes = {
     text: PropTypes.string,
     buttonText: PropTypes.string,
     buttonColor: PropTypes.string,
-    containedComponent: PropTypes.func
+    containedComponent: PropTypes.any,
+    // containedComponent: PropTypes.func TODO: Check prop type is a Component
 };
 
-
 const QuoteLine = (props) => (
-    <Jumbotron fluid style={props.className}>
+    <Jumbotron fluid className={props.className} style={{backgroundColor: props.backgroundColor}}>
         <h4>
             {props.quote}
         </h4>
     </Jumbotron>
 );
 
+QuoteLine.defaultProps = {
+  backgroundColor: '#3498db'
+};
+
 QuoteLine.propTypes = {
     className: PropTypes.string,
+    backgroundColor: PropTypes.string,
     quote: PropTypes.string.isRequired
 };
 
 const SingleCard = (props) => (
-    <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={props.image} />
+    <Card className={props.cardClassName} style={{ width: '18rem' }}>
+        {/*<Card.Img variant="top" src={props.image} className={props.imgClassName}/>*/}
+        <FontAwesome
+            name={props.fontAwesome}
+            size='2x'
+            // spin
+        />
         <Card.Body>
             <Card.Title>{props.heading}</Card.Title>
             <Card.Text>
@@ -70,11 +81,14 @@ const SingleCard = (props) => (
 );
 
 SingleCard.defaultProps = {
-  image:'https://via.placeholder.com/150'
+   fontAwesome:'chart-bar'
 };
 
 SingleCard.propTypes = {
+    cardClassName: PropTypes.string,
+    fontAwesome: PropTypes.string,
     image: PropTypes.string,
+    imgClassName: PropTypes.string,
     heading: PropTypes.string,
     text: PropTypes.string,
     buttonText: PropTypes.string,
@@ -109,49 +123,47 @@ export default class Landing extends React.Component {
         return (
             <div className='landingPage'>
                 <FontAwesome
-                    name='rocket'
+                    name='hand-holding-heart'
                     size='2x'
                     spin
                 />
-                    <FullWidth
-                        className={'heroTop'}
-                        heading={'Meet Your Personal Board of Advisers'}
-                        text={'Community fueled accountability, support and personal growth.'}
-                        buttonText={'Learn More'}
-                    />
-                <Row>
-                    <FullWidth
-                        heading={'Hi, I’m Andrew - the founder of the Better Together Mastermind Network\n'}
-                        text={'I’m a digital nomad, software engineer and systems architect with the belief that everyone has something to teach. One of my passions is connecting people and building impacting communities that enable personal growth, health and success.'}
-                        buttonText={'Meet Me'}
-                    />
-                </Row>
-                <Row>
-                    <QuoteLine
-                        quote={'"You are the average of the five people you spend the most time with." - Jim Rohn'}
-                    />
-                </Row>
-                <Row>
-                    <Col>
+                <FullWidth
+                    className={'heroTop'}
+                    heading={'Your Personal Board of Advisers'}
+                    text={'Community fueled accountability, support and personal growth.'}
+                    buttonText={'Learn More'}
+                />
+                <FullWidth
+                    heading={'Hi, I’m Andrew - the founder of the Better Together Mastermind Network\n'}
+                    text={'I’m a digital nomad, software engineer and systems architect with the belief that everyone has something to teach. One of my passions is connecting people and building impacting communities that enable personal growth, health and success.'}
+                    buttonText={'Meet Me'}
+                />
+                <QuoteLine
+                    className={'quoteLine'}
+                    quote={'"You are the average of the five people you spend the most time with." - Jim Rohn'}
+                />
+                <Row className={'card-row'}>
+                    <Col lg='11'>
+                    <CardDeck>
                         <SingleCard
+                            fontAwesome={'link'}
                             heading={'Accountability Chain'}
                             text={'Imagine what you could get done with an inspired group of people keeping you focused. Members are plugged into our Accountability Chain for that crucial external accountability.'}
                             buttonText={'Optional Button'}
                         />
-                    </Col>
-                    <Col>
                         <SingleCard
+                            imgClassName={'data-card'}
                             heading={'Data Driven'}
                             text={'Track your performance with our weekly review and monthly reports. Experiment with new systems and get actionable data feedback.'}
                             buttonText={'Optional Button'}
                         />
-                    </Col>
-                    <Col>
                         <SingleCard
-                            heading={'Expert Coaching'}
-                            text={'Benefit from exclusive quarterly meetings and offers with some of the brightest minds in high performance.'}
+                            fontAwesome={'users'}
+                            heading={'Find Your Tribe!'}
+                            text={'Build supporting relationships and communities with the people that share your dream, whatever that dream might be.'}
                             buttonText={'Optional Button'}
                         />
+                    </CardDeck>
                     </Col>
                 </Row>
                 <FullWidth
