@@ -122,11 +122,11 @@ export default class Landing extends React.Component {
     render() {
         return (
             <div className='landingPage'>
-                <FontAwesome
-                    name='hand-holding-heart'
-                    size='2x'
-                    spin
-                />
+                {/*<FontAwesome*/}
+                {/*    name='hand-holding-heart'*/}
+                {/*    size='2x'*/}
+                {/*    spin*/}
+                {/*/>*/}
                 <FullWidth
                     className={'heroTop'}
                     heading={'Your Personal Board of Advisers'}
