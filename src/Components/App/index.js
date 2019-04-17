@@ -6,7 +6,6 @@ import {
     Route,
 } from 'react-router-dom';
 
-import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
@@ -45,11 +44,12 @@ class App extends Component {
         this.listener();
     }
 
+    //TODO: Fix routing issue that causes whole page to reload on nav bar click
     render() {
         return(
             <div className="app-container">
+                <TopNavigation authUser={this.state.authUser} />
                 <Router>
-                    <TopNavigation authUser={this.state.authUser} />
                     <Route exact path={ROUTES.LANDING} component={LandingPage} />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                     <Route path={ROUTES.SIGN_IN} component={SignInPage} />

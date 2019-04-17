@@ -14,12 +14,14 @@ import {
     CardDeck
     }
     from 'react-bootstrap';
+import dawn from '../../Assets/images/dawn.jpg'
+import mlk from '../../Assets/images/seenTheMountainTop.jpg'
 
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
         <Container className={props.className+'-container'}>
-            <h4>{props.heading}</h4>
-            <h5>{props.text}</h5>
+            <h4 className={'heading'}>{props.heading}</h4>
+            <h5 className={'fullwidth-text'}>{props.text}</h5>
             { props.buttonText ? <Button variant={props.buttonColor}>{props.buttonText}</Button> : null }
         </Container>
         {props.containedComponent}
@@ -95,18 +97,31 @@ SingleCard.propTypes = {
 };
 
 const FiftyFifty = (props) => (
-    <Row>
+    <Row className={'fiftyfifty'}>
         <Col>
-            { props.leftImage ? <Image src={props.leftImage} fluid /> : <div>{props.textLeft}</div> }
+            { props.leftImage ?
+                <Image className={'fiftyImage'} src={props.leftImage} fluid />
+                :
+                <Container>
+                    <h4 className={'heading'} >{props.headingLeft}</h4>
+                    <div className={'fiftyText'}>{props.textLeft}</div>
+                </Container>
+            }
         </Col>
         <Col>
-            { props.rightImage ? <Image src={props.rightImage} fluid /> : <div>{props.textRight}</div> }
+            { props.rightImage ?
+                <Image className={'fiftyImage'} src={props.rightImage} fluid />
+                :
+                <Container>
+                    <h4 className={'heading'}>{props.headingRight}</h4>
+                    <div className={'fiftyText'}>{props.textRight}</div>
+                </Container>
+            }
         </Col>
     </Row>
 );
 
 FiftyFifty.defaultProps = {
-    leftImage: 'https://via.placeholder.com/300',
     textRight: 'Your Text Here!'
 };
 
@@ -114,7 +129,11 @@ FiftyFifty.propTypes = {
     leftImage: PropTypes.string,
     textLeft: PropTypes.string,
     rightImage: PropTypes.string,
-    textRight: PropTypes.string
+    textRight: PropTypes.string,
+    headingRight: PropTypes.string,
+    headingLeft: PropTypes.string,
+    fiftyImage: PropTypes.string,
+    fiftyfifty: PropTypes.string,
 };
 
 export default class Landing extends React.Component {
@@ -167,14 +186,34 @@ export default class Landing extends React.Component {
                     </Col>
                 </Row>
                 <FullWidth
+                    className={'success'}
                     heading={'Ready to Accelerate Your Success?'}
                     text={'If you have big dreams but suffer from a lack of structure... if you have specific goals but can\'t seem achieve them... if you know you need more guidance, accountability or motivation... then we are going to change your life.\n' +
                     '\n' +
                     'What most people do when facing these problems is try every new shiny object that comes along. An online course... the book everyone is reading... a new "10 step" fad... and the list goes on. But for most people, none of that works because it\'s missing an essential ingredients: community and accountability.'}
                 />
-                <FiftyFifty />
+                <FiftyFifty
+                    headingLeft={'Collaboration is the New Competition'}
+                    textLeft={'We helps members get and stay unstuck by providing community, coaching and accountability that sparks transformation growth. \n' +
+                    '\n' +
+                    'Our members and guest coaches take an active interest in each others\' lives, careers and goals. Members benefit from the knowledge of the group and the open exchange of business and personal development expertise.'}
+                    rightImage={dawn}
+                />
                 <FullWidth
-                    containedComponent={<FiftyFifty />}
+                    heading={'Hi, I’m Andrew - the founder of the Better Together Mastermind Network\n'}
+                    text={'I’m a digital nomad, software engineer and systems architect with the belief that everyone has something to teach. One of my passions is connecting people and building impacting communities that enable personal growth, health and success.'}
+                    containedComponent={
+                        <FiftyFifty
+                            headingRight={'Accountability Unleashed'}
+                            textRight={'Weekly mastermind calls\n' +
+                            'Active Slack channel\n' +
+                            'Annual in person retreat\n' +
+                            'Set weekly goals and review your previous week\n' +
+                            'Goals are posted and tracked\n' +
+                            'Exercises to help you get focused'}
+                            leftImage={mlk}
+                        />
+                    }
                 />
                 <FullWidth />
                 <FullWidth
