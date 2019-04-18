@@ -2,12 +2,9 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-
 import * as ROUTES from '../../Constants/routes';
 import SignOutButton from '../SignOut';
+import { Link } from 'react-router-dom';
 
 
 const AuthNav = () => (
@@ -16,10 +13,10 @@ const AuthNav = () => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-                <Nav.Link href={ROUTES.HOME}>Home</Nav.Link>
-                <Nav.Link href={ROUTES.LANDING}>Landing</Nav.Link>
-                <Nav.Link href={ROUTES.ACCOUNT}>My Account</Nav.Link>
-                <Nav.Link href={ROUTES.WEEKLY_REVIEW}>Weekly Review</Nav.Link>
+                <Link className={'nav-link'} to={ROUTES.HOME}>Home</Link>
+                <Link className={'nav-link'} to={ROUTES.LANDING}>Landing</Link>
+                <Link className={'nav-link'} to={ROUTES.ACCOUNT}>My Account</Link>
+                <Link className={'nav-link'} to={ROUTES.WEEKLY_REVIEW}>Weekly Review</Link>
                 <SignOutButton />
                 <NavDropdown title="Dropdown Example" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -29,10 +26,6 @@ const AuthNav = () => (
                     <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
-            <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-success">Search</Button>
-            </Form>
         </Navbar.Collapse>
     </Navbar>
 );
@@ -43,10 +36,11 @@ const UnauthNavBar = () => (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-                <Nav.Link href={ROUTES.HOME}>Home</Nav.Link>
-                <Nav.Link href={ROUTES.LANDING}>Landing</Nav.Link>
-                <Nav.Link href={ROUTES.WEEKLY_REVIEW}>Weekly Review</Nav.Link>
-                <Nav.Link href={ROUTES.SIGN_IN}>Sign In</Nav.Link>
+                <Link className={'nav-link'} to={ROUTES.HOME}>Home</Link>
+                <Link className={'nav-link'} to={ROUTES.LANDING}>Landing</Link>
+                <Link className={'nav-link'} to={ROUTES.ACCOUNT}>My Account</Link>
+                <Link className={'nav-link'} to={ROUTES.WEEKLY_REVIEW}>Weekly Review</Link>
+                <Link className={'nav-link'} to={ROUTES.SIGN_IN}>Sign In</Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -55,10 +49,6 @@ const UnauthNavBar = () => (
                     <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
-            <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-success">Search</Button>
-            </Form>
         </Navbar.Collapse>
     </Navbar>
 );
