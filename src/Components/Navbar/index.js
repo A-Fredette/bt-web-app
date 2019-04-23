@@ -17,6 +17,13 @@ const AuthNav = () => (
                 <Link className={'nav-link'} to={ROUTES.LANDING}>Landing</Link>
                 {/*<Link className={'nav-link'} to={ROUTES.ACCOUNT}>My Account</Link>*/}
                 <Link className={'nav-link'} to={ROUTES.WEEKLY_REVIEW}>Weekly Review</Link>
+                <NavDropdown title="Learn More" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">Members</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">Tools</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.4">Apply</NavDropdown.Item>
+                </NavDropdown>
                 <SignOutButton />
             </Nav>
         </Navbar.Collapse>
@@ -34,6 +41,13 @@ const UnauthNavBar = () => (
                 {/*<Link className={'nav-link'} to={ROUTES.ACCOUNT}>My Account</Link>*/}
                 <Link className={'nav-link'} to={ROUTES.WEEKLY_REVIEW}>Weekly Review</Link>
                 <Link className={'nav-link'} to={ROUTES.SIGN_IN}>Sign In</Link>
+                <NavDropdown title="Learn More" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="#action/3.1">About</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">Members</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">Tools</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.4">Apply</NavDropdown.Item>
+                </NavDropdown>
             </Nav>
         </Navbar.Collapse>
     </Navbar>
