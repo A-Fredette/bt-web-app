@@ -1,16 +1,39 @@
 import React from 'react'
-import { FullWidth } from "../Landing";
-import {Row} from "react-bootstrap";
+import { Row, Col, Jumbotron } from "react-bootstrap";
+import FontAwesome from 'react-fontawesome';
+import './footer.scss'
+import TopNavigation from '../Navbar';
 
-export default class Footer extends React.Component {
-    render() {
-        return (
-            <Row>
-                <FullWidth
-                    text={'All right reserved.'}
-                    />
-            </Row>
-        )
-    }
+const year = new Date().getFullYear();
 
-}
+const Footer = (props) => (
+    <Jumbotron fluid className={'footer'}>
+        <Row>
+            <Col>
+                <FontAwesome
+                    name='instagram'
+                    size='2x'
+                    tag='a'
+                    href='www.instagram.com'
+                />
+                <FontAwesome
+                    name='twitter'
+                    size='2x'
+                    tag='a'
+                    href='www.twitter.com'
+                />
+                <FontAwesome
+                    name='envelope'
+                    size='2x'
+                    tag='a'
+                    href='mailto:andrew@bettertogethermm.com'
+                />
+            </Col>
+        </Row>
+        <Row className={'copyright'}>
+            <p>© {year} BT Collaborative Systems</p>
+        </Row>
+    </Jumbotron>
+);
+
+export default Footer;

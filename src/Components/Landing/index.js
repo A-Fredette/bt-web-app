@@ -1,7 +1,6 @@
 import React from 'react';
 import './landing.scss'
 import PropTypes from 'prop-types';
-import Footer from './../Footer';
 import FontAwesome from 'react-fontawesome';
 import {
     Jumbotron,
@@ -14,12 +13,14 @@ import {
     CardDeck
     }
     from 'react-bootstrap';
+import dawn from '../../Assets/images/dawn.jpg'
+import mlk from '../../Assets/images/seenTheMountainTop.jpg'
 
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
         <Container className={props.className+'-container'}>
-            <h4>{props.heading}</h4>
-            <h5>{props.text}</h5>
+            <h4 className={'heading'}>{props.heading}</h4>
+            <p className={'fullwidth-text'}>{props.text}</p>
             { props.buttonText ? <Button variant={props.buttonColor}>{props.buttonText}</Button> : null }
         </Container>
         {props.containedComponent}
@@ -95,18 +96,31 @@ SingleCard.propTypes = {
 };
 
 const FiftyFifty = (props) => (
-    <Row>
+    <Row className={'fiftyfifty'}>
         <Col>
-            { props.leftImage ? <Image src={props.leftImage} fluid /> : <div>{props.textLeft}</div> }
+            { props.leftImage ?
+                <Image className={'fiftyImage'} src={props.leftImage} fluid />
+                :
+                <Container>
+                    <h4 className={'heading'} >{props.headingLeft}</h4>
+                    <div className={'fiftyText'}>{props.textLeft}</div>
+                </Container>
+            }
         </Col>
         <Col>
-            { props.rightImage ? <Image src={props.rightImage} fluid /> : <div>{props.textRight}</div> }
+            { props.rightImage ?
+                <Image className={'fiftyImage'} src={props.rightImage} fluid />
+                :
+                <Container>
+                    <h4 className={'heading'}>{props.headingRight}</h4>
+                    <div className={'fiftyText'}>{props.textRight}</div>
+                </Container>
+            }
         </Col>
     </Row>
 );
 
 FiftyFifty.defaultProps = {
-    leftImage: 'https://via.placeholder.com/300',
     textRight: 'Your Text Here!'
 };
 
@@ -114,7 +128,11 @@ FiftyFifty.propTypes = {
     leftImage: PropTypes.string,
     textLeft: PropTypes.string,
     rightImage: PropTypes.string,
-    textRight: PropTypes.string
+    textRight: PropTypes.string,
+    headingRight: PropTypes.string,
+    headingLeft: PropTypes.string,
+    fiftyImage: PropTypes.string,
+    fiftyfifty: PropTypes.string,
 };
 
 export default class Landing extends React.Component {
@@ -122,11 +140,6 @@ export default class Landing extends React.Component {
     render() {
         return (
             <div className='landingPage'>
-                <FontAwesome
-                    name='hand-holding-heart'
-                    size='2x'
-                    spin
-                />
                 <FullWidth
                     className={'heroTop'}
                     heading={'Your Personal Board of Advisers'}
@@ -167,20 +180,66 @@ export default class Landing extends React.Component {
                     </Col>
                 </Row>
                 <FullWidth
+                    className={'success'}
                     heading={'Ready to Accelerate Your Success?'}
                     text={'If you have big dreams but suffer from a lack of structure... if you have specific goals but can\'t seem achieve them... if you know you need more guidance, accountability or motivation... then we are going to change your life.\n' +
                     '\n' +
                     'What most people do when facing these problems is try every new shiny object that comes along. An online course... the book everyone is reading... a new "10 step" fad... and the list goes on. But for most people, none of that works because it\'s missing an essential ingredients: community and accountability.'}
                 />
-                <FiftyFifty />
-                <FullWidth
-                    containedComponent={<FiftyFifty />}
-                />
+                <Row className={'fiftyfifty'}>
+                    <Col>
+                        <Container>
+                            <h4 className={'heading'}>Collaboration is the New Competition</h4>
+                            <br />
+                            <div className={'fiftyText'}>
+                                <p>We helps members get and stay unstuck by providing community, coaching and accountability that sparks transformation growth.</p>
+                                <br />
+                                <p>Our members and guest coaches take an active interest in each others' lives, careers and goals. Members benefit from the knowledge of the group and the open exchange of business and personal development expertise.</p>
+                            </div>
+                        </Container>
+                    </Col>
+                    <Col>
+                        <Container>
+                            <Image className={'fiftyImage'} src={dawn} />
+                        </Container>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Jumbotron className={'support'}>
+                            <Container className={'support-container'}>
+                                <h4 className={'heading'}>Imagine What You Would Accomplish with Enough Support.</h4>
+                                <p className={'fullwidth-text'}>
+                                    How would your life change if you had a group of like-minded individuals that you could turn to on a daily basis? Would you feel less stressed? Would you be more effective, energized and inspired?</p>
+                                    <br />
+                                    <p>We help bring focus and clarity to members' lives so they can become better people, professionals, entrepreneurs, parents and partners. We listen to each others' challenges and opportunities. We work together to identify and eliminate what's holding you back and provide fresh insights to help you achieve your goals.
+                                </p>
+                            </Container>
+                        </Jumbotron>
+                    </Col>
+                </Row>
+                <Row className={['fiftyfifty', 'mountain']}>
+                    <Col lg={6}>
+                        <Container>
+                            <Image className={'fiftyImage'} src={mlk} />
+                        </Container>
+                    </Col>
+                    <Col>
+                        <Container className={'text-container'}>
+                            <h4 className={'heading'}>Fix this one</h4>
+                            <br />
+                            <div className={'fiftyText'}>
+                                <p>We helps members get and stay unstuck by providing community, coaching and accountability that sparks transformation growth.</p>
+                                <br />
+                                <p>Our members and guest coaches take an active interest in each others' lives, careers and goals. Members benefit from the knowledge of the group and the open exchange of business and personal development expertise.</p>
+                            </div>
+                        </Container>
+                    </Col>
+                </Row>
                 <FullWidth />
                 <FullWidth
                     containedComponent={<FullWidth />}
                 />
-                <Footer />
             </div>
         )
     }

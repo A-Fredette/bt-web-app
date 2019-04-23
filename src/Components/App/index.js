@@ -6,7 +6,6 @@ import {
     Route,
 } from 'react-router-dom';
 
-import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
@@ -16,6 +15,7 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import WeeklyReview from '../WeeklyReview';
 import TopNavigation from '../Navbar';
+import Footer from '../Footer';
 
 import * as ROUTES from '../../Constants/routes';
 
@@ -49,7 +49,9 @@ class App extends Component {
         return(
             <div className="app-container">
                 <Router>
-                    <TopNavigation authUser={this.state.authUser} />
+                    <TopNavigation authUser={this.state.authUser}
+                        fixed='top'
+                    />
                     <Route exact path={ROUTES.LANDING} component={LandingPage} />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                     <Route path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -58,6 +60,9 @@ class App extends Component {
                     <Route path={ROUTES.ACCOUNT} component={AccountPage} />
                     <Route path={ROUTES.ADMIN} component={AdminPage} />
                     <Route path={ROUTES.WEEKLY_REVIEW} component={WeeklyReview} />
+                </Router>
+                <Router>
+                    <Footer authUser={this.state.authUser} />
                 </Router>
             </div>
         )

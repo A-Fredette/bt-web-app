@@ -1,0 +1,23 @@
+@import '../../Assets/Theme/theme';
+
+.footer {
+  background-color: $darkBlue;
+  color: #FFF;
+  margin-bottom: 0;
+  padding: $component-spacing;
+
+  a {
+    color: #FFFFFF;
+    &:hover {
+      color: #4ed1ff;
+    }
+  }
+
+  .fa {
+    margin-right: 1em;
+  }
+
+  .copyright {
+    margin: 1.5em 0 0;
+  }
+}
