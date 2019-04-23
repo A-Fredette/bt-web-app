@@ -3,8 +3,9 @@ import Button from 'react-bootstrap/Button';
 
 import { withFirebase } from '../Firebase/firebase';
 
+
 const SignOutButton = ({ firebase }) => (
-    <Button type="button" onChange={firebase.doSignOut}>
+    <Button type="button" onClick={firebase.doSignOut}>
         Sign Out
     </Button>
 );

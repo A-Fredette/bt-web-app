@@ -6,6 +6,7 @@ import * as ROUTES from '../../Constants/routes';
 import SignOutButton from '../SignOut';
 import { Link } from 'react-router-dom';
 
+
 //TODO: Remove bg light until scrolling down
 const AuthNav = () => (
     <Navbar fixed='top' bg='light' expand="lg">
