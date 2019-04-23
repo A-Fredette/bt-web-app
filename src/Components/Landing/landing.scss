@@ -1,7 +1,10 @@
 @import '../../Assets/Theme/theme';
 
+//TODO: Use extensions and inheritance for section spacing
+
 .jumbotron {
   background-color: white;
+  border-radius: 0;
 }
 .heroTop {
   background-image: url('../../Assets/images/backlit.jpg');
@@ -108,5 +111,14 @@
   .fiftyImage {
     width: 100%;
   }
+}
+.data {
+  margin-bottom: 0;
+  background-color: rgba(112, 112, 112, 0.96);
+
+}
+
+.data-2 {
+  background-color: transparent;
 }
 

@@ -162,19 +162,19 @@ export default class Landing extends React.Component {
                             fontAwesome={'link'}
                             heading={'Accountability Chain'}
                             text={'Imagine what you could get done with an inspired group of people keeping you focused. Members are plugged into our Accountability Chain for that crucial external accountability.'}
-                            buttonText={'Optional Button'}
+                            buttonText={'Learn More'}
                         />
                         <SingleCard
                             imgClassName={'data-card'}
                             heading={'Data Driven'}
                             text={'Track your performance with our weekly review and monthly reports. Experiment with new systems and get actionable data feedback.'}
-                            buttonText={'Optional Button'}
+                            buttonText={'Learn More'}
                         />
                         <SingleCard
                             fontAwesome={'users'}
                             heading={'Find Your Tribe!'}
                             text={'Build supporting relationships and communities with the people that share your dream, whatever that dream might be.'}
-                            buttonText={'Optional Button'}
+                            buttonText={'Learn More'}
                         />
                     </CardDeck>
                     </Col>
@@ -226,19 +226,45 @@ export default class Landing extends React.Component {
                     </Col>
                     <Col>
                         <Container className={'text-container'}>
-                            <h4 className={'heading'}>Fix this one</h4>
+                            <h4 className={'heading'}>Our Accountability Tools</h4>
                             <br />
                             <div className={'fiftyText'}>
-                                <p>We helps members get and stay unstuck by providing community, coaching and accountability that sparks transformation growth.</p>
-                                <br />
-                                <p>Our members and guest coaches take an active interest in each others' lives, careers and goals. Members benefit from the knowledge of the group and the open exchange of business and personal development expertise.</p>
+                                <ul>
+                                    <li>Weekly mastermind calls</li>
+                                    <li>Active Slack channel</li>
+                                    <li>Annual in person retreat</li>
+                                    <li>Set weekly goals and review your previous week</li>
+                                    <li>Goals are posted and tracked</li>
+                                    <li>Exercises to help you get focused</li>
+                                </ul>
                             </div>
                         </Container>
                     </Col>
                 </Row>
-                <FullWidth />
                 <FullWidth
-                    containedComponent={<FullWidth />}
+                    className={'network'}
+                    heading={'High Performance Coaching Network'}
+                    text={'Each of our members can provide valuable perspectives and insights, but we want to also stand on the shoulder of giants for particular topics. \n' +
+                    '\n' +
+                    'Each month, we identify an area that would have the most impact on the group. We then search for an expert on that topic and invite them to speak to our mastermind. Not only will you learn from the amazing members in our group, but also personal development and business experts with years of experience in a particular field.\n' +
+                    '\n' +
+                    'See our previous guest coaches and our planned upcoming coaches.'}
+                />
+                <FullWidth
+                    className={'data'}
+                    heading={'Let Data Guide Your Growth'}
+                    text={'We believe in the power of data. As a member, you will track key personal metrics such as happiness, productivity and distraction. By measuring these data points over time, you will gain new insights and will be able to make smarter decisions about where to focus your attention. \n' +
+                    '\n' +
+                    'We also leverage this data to determine the mastermind\'s opportunities for growth. This information is used to bring in expert coaches that will help us collectively get to the next level.\n' +
+                    '\n'}
+                    containedComponent={<FullWidth
+                        className={'data-2'}
+                        heading={'Harness the Power of Data'}
+                        text={'Use our tool to complete weekly reflections\n' +
+                        'Record key personal stats such as feelings of joy, purpose and productivity\n' +
+                        'Access graphs that show your long term trends\n' +
+                        'Use these insights to take targeted actions to improve your performance\n'}
+                    />}
                 />
             </div>
         )
