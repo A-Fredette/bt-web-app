@@ -6,9 +6,9 @@ import * as ROUTES from '../../Constants/routes';
 import SignOutButton from '../SignOut';
 import { Link } from 'react-router-dom';
 
-
+//TODO: Remove bg light until scrolling down
 const AuthNav = () => (
-    <Navbar bg="light" expand="lg">
+    <Navbar fixed='top' bg='light' expand="lg">
         <Navbar.Brand href="#home">Better Together</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -31,7 +31,7 @@ const AuthNav = () => (
 );
 
 const UnauthNavBar = () => (
-    <Navbar bg="light" expand="lg">
+    <Navbar fixed='top' bg='light' expand="lg">
         <Navbar.Brand href="#home">Better Together</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
