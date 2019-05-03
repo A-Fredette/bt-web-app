@@ -15,6 +15,9 @@ import {
     from 'react-bootstrap';
 import dawn from '../../Assets/images/dawn.jpg'
 import mlk from '../../Assets/images/seenTheMountainTop.jpg'
+import furiosa from '../../Assets/images/furiosa.jpg'
+import sarah from '../../Assets/images/sarah.png'
+
 
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
@@ -134,6 +137,37 @@ FiftyFifty.propTypes = {
     fiftyImage: PropTypes.string,
     fiftyfifty: PropTypes.string,
 };
+
+const Testimonial = (props) => (
+    <Card className={props.cardClassName} style={{ width: '30rem' }}>
+        <Card.Img variant="top" src={props.image} className={props.imgClassName}/>
+        <Card.Body>
+            <Card.Title>{props.heading}</Card.Title>
+            <Card.Text>
+                {props.text}
+            </Card.Text>
+            { props.buttonText ? <Button variant="primary">{props.buttonText}</Button> : null }
+            <footer className="blockquote-footer">
+                {props.source}
+            </footer>
+            <Card.Link href="#">{props.linkText}</Card.Link>
+        </Card.Body>
+    </Card>
+);
+
+
+Testimonial.propTypes = {
+    cardClassName: PropTypes.string,
+    image: PropTypes.string,
+    imgClassName: PropTypes.string,
+    heading: PropTypes.string,
+    text: PropTypes.string,
+    buttonText: PropTypes.string,
+    source: PropTypes.string,
+    linkText: PropTypes.string,
+};
+
+
 
 export default class Landing extends React.Component {
 
@@ -266,9 +300,34 @@ export default class Landing extends React.Component {
                         'Use these insights to take targeted actions to improve your performance\n'}
                     />}
                 />
+                <Row className={'card-row'}>
+                    <h4 className={'heading'}>What Our Members Are Saying</h4>
+                    <CardDeck>
+                        <Col lg ='6'>
+                            <Testimonial
+                                cardClassName={'testimonialCard'}
+                                heading={'Author & Podcaster Extraordinaire'}
+                                image={furiosa}
+                                text={'“I’ve never felt so much clarity, consistency, and direction both creatively and professionally. Joining the Mastermind has made life go by slower because I use time more efficiently. With a weekly board of advisers to guide my entrepreneurial endeavors, I’m seeing a wealth of growth and learning and even entrepreneurial success with my progress. This isn’t just an investment, it’s a road map to fulfillment.”'}
+                                source={'Quin, Host of Mania Podcast'}
+                                linkText={'Learn more about Quin'}
+                            />
+                        </Col>
+                        <Col lg='6'>
+                            <Testimonial
+                                cardClassName={'testimonialCard'}
+                                heading={'Yoga Instructor & Videographer'}
+                                image={sarah}
+                                text={'“I’ve never felt so much clarity, consistency, and direction both creatively and professionally. Joining the Mastermind has made life go by slower because I use time more efficiently. With a weekly board of advisers to guide my entrepreneurial endeavors, I’m seeing a wealth of growth and learning and even entrepreneurial success with my progress. This isn’t just an investment, it’s a road map to fulfillment.”'}
+                                source={'Sarah, Yogi & Videographer'}
+                                linkText={'Learn more about Sarah'}
+                            />
+                        </Col>
+                    </CardDeck>
+                </Row>
             </div>
         )
     }
 }
 
-export { FullWidth, FiftyFifty, QuoteLine }
+export { FullWidth, FiftyFifty, QuoteLine, Testimonial }
