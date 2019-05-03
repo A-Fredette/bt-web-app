@@ -6,7 +6,7 @@ import TopNavigation from '../Navbar';
 
 const year = new Date().getFullYear();
 
-const Footer = (props) => (
+const Footer = () => (
     <Jumbotron fluid className={'footer'}>
         <Row>
             <Col>
