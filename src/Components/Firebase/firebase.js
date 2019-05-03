@@ -11,6 +11,8 @@ const config = {
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
+
+// Interface class for interacting with Firebase
 class Firebase {
     constructor() {
         app.initializeApp(config);
@@ -25,10 +27,19 @@ class Firebase {
 
     doSignOut = () => this.auth.signOut();
 
-    doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
+    doPasswordReset = email =>
+        this.auth.sendPasswordResetEmail(email);
 
     doPasswordUpdate = password =>
         this.auth.currentUser.updatePassword(password);
+
+    // writeUserData(userId, name, email, imageUrl) => (
+    //     firebase.database().ref('users/' + userId).set({
+    //         username: name,
+    //         email: email,
+    //         profile_picture : imageUrl
+    //     });
+    // );
 }
 export { FirebaseContext, withFirebase };
 

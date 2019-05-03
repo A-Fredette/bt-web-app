@@ -6,14 +6,6 @@ import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase/firebase';
 import * as ROUTES from '../../Constants/routes';
 
-const SignInPage = () => (
-    <div>
-        <h1>SignIn</h1>
-        <SignInForm />
-        <SignUpLink />
-    </div>
-);
-
 const INITIAL_STATE = {
     email: '',
     password: '',
@@ -82,6 +74,14 @@ const SignInForm = compose(
     withRouter,
     withFirebase,
 )(SignInFormBase);
+
+const SignInPage = () => (
+    <div>
+        <h1>SignIn</h1>
+        <SignInForm />
+        <SignUpLink />
+    </div>
+);
 
 export default SignInPage;
 

@@ -9,7 +9,10 @@ export const withFirebase = Component => props => (
     // "firebase" indicates the value passed by the Provider
     // Consumers require functions as a child, the function receives the current context and returns a node
     <FirebaseContext.Consumer>
-        {firebase => <Component {...props} firebase={firebase} />}
+        {firebase =>
+            <Component {...props}
+                       firebase={firebase} />
+        }
     </FirebaseContext.Consumer>
 );
 
