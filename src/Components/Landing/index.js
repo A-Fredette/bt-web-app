@@ -17,6 +17,7 @@ import dawn from '../../Assets/images/dawn.jpg'
 import mlk from '../../Assets/images/seenTheMountainTop.jpg'
 import furiosa from '../../Assets/images/furiosa.jpg'
 import sarah from '../../Assets/images/sarah.png'
+import dashboardExample from '../../Assets/images/dashboardExample.png'
 
 
 const FullWidth = (props) => (
@@ -177,42 +178,116 @@ export default class Landing extends React.Component {
                 <FullWidth
                     className={'heroTop'}
                     heading={'Your Personal Board of Advisers'}
-                    text={'Community fueled accountability, support and personal growth.'}
-                    buttonText={'Learn More'}
+                    text={'Accelerate your dreams with community-based accountability, support and personal growth.'}
                 />
-                <FullWidth
-                    heading={'Hi, I’m Andrew - the founder of the Better Together Mastermind Network\n'}
-                    text={'I’m a digital nomad, software engineer and systems architect with the belief that everyone has something to teach. One of my passions is connecting people and building impacting communities that enable personal growth, health and success.'}
-                    buttonText={'Meet Me'}
-                />
+                <Jumbotron className='main-points'>
+                    <Row>
+                        <Col lg='2' className='icon'>
+                        <FontAwesome
+                            name='link'
+                            size='2x'
+                        />
+                    </Col>
+                        <Col lg='6'>
+                            <h3>Get Accountability</h3>
+                            <p>Studies show that accountability is the most important component of productivity. Set your goals weekly with your group and assign each goal a dollar value that works for you. If you don't hit your goal, that money is donated to charity. Do good by doing bad by leveraging the latest research in reward systems.</p>
+                        </Col>
+                        <Col lg='4'>
+                            <Card bg='light'>
+                                {/*<Card.Img src="holder.js/100px270" alt="Card image" />*/}
+                                <Card.Body className='charity-card-body'>
+                                    <Card.Title>Total Missed Goal Donations</Card.Title>
+                                    <Card.Text className='charity-amount'>
+                                        $1000
+                                    </Card.Text>
+                                    <Card.Link href="#">Learn more who we support</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg='2' className='icon'>
+                            <FontAwesome
+                                name='chart-bar'
+                                size='2x'
+                            />
+                        </Col>
+                        <Col lg='6'>
+                            <h3>Data Driven</h3>
+                            <h6>Take the 'woo' out of personal development</h6>
+                            <p>Each member has a Performance Dashboard that tracks their performance in key categories week to week. By completing a weekly review, we track our focus, clarity, accountability, mindfulness, courage productivity & energy. By looking at this data over the long term, we gain valuable insights into our behavior patterns.</p>
+                            <Button>Example Dashboard</Button>
+                        </Col>
+                        <Col lg='4'>
+                            <Image src={dashboardExample} thumbnail />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg='2' className='icon'>
+                            <FontAwesome
+                                name='users'
+                                size='2x'
+                            />
+                        </Col>
+                        <Col lg='9'>
+                            <h3>Find Your Tribe</h3>
+                            <h6>Crowd Source Your Dreams</h6>
+                            <p>With the rise of freelancers, remote workers and soloprenuers, we're more isolated than ever. Find a group of people that share your dreams and values that you can share your insights, struggles and victories with. One person's insights can save you weeks or months of trying to figure out something on your own. Community is everything.</p>
+                            <Button>Apply Today</Button>
+                        </Col>
+                    </Row>
+                </Jumbotron>
+                <Jumbotron className='steps'>
+                    <h1>How it Works</h1>
+                    <Row className='steps-row'>
+                        <Col lg='2'>
+                            <h1>1.</h1>
+                        </Col>
+                        <Col lg='2'>
+                            <h2>Apply & get matched with your tribe.</h2>
+                        </Col>
+                        <Col lg='2'>
+                            <h1>2.</h1>
+                        </Col>
+                        <Col lg='2'>
+                            <h2>Meet weekly in a curated small group.</h2>
+                        </Col>
+                        <Col lg='2'>
+                            <h1>3.</h1>
+                        </Col>
+                        <Col lg='2'>
+                            <h2>Track your progress using our tools.</h2>
+                        </Col>
+                    </Row>
+                </Jumbotron>
+                {/*<Row className={'card-row'}>*/}
+                {/*    <Col>*/}
+                {/*    <CardDeck className={'card-deck'}>*/}
+                {/*        <SingleCard*/}
+                {/*            fontAwesome={'link'}*/}
+                {/*            heading={'Accountability Chain'}*/}
+                {/*            text={'Imagine what you could get done with an inspired group of people keeping you focused. Members are plugged into our Accountability Chain for that crucial external accountability.'}*/}
+                {/*            buttonText={'Learn More'}*/}
+                {/*        />*/}
+                {/*        <SingleCard*/}
+                {/*            imgClassName={'data-card'}*/}
+                {/*            heading={'Data Driven'}*/}
+                {/*            text={'Track your performance with our weekly review and monthly reports. Experiment with new systems and get actionable data feedback.'}*/}
+                {/*            buttonText={'Learn More'}*/}
+                {/*        />*/}
+                {/*        <SingleCard*/}
+                {/*            fontAwesome={'users'}*/}
+                {/*            heading={'Find Your Tribe!'}*/}
+                {/*            text={'Build supporting relationships and communities with the people that share your dream, whatever that dream might be.'}*/}
+                {/*            buttonText={'Learn More'}*/}
+                {/*        />*/}
+                {/*    </CardDeck>*/}
+                {/*    </Col>*/}
+                {/*</Row>*/}
                 <QuoteLine
                     className={'quoteLine'}
                     quote={'"You are the average of the five people you spend the most time with." - Jim Rohn'}
                 />
-                <Row className={'card-row'}>
-                    <Col lg='11'>
-                    <CardDeck>
-                        <SingleCard
-                            fontAwesome={'link'}
-                            heading={'Accountability Chain'}
-                            text={'Imagine what you could get done with an inspired group of people keeping you focused. Members are plugged into our Accountability Chain for that crucial external accountability.'}
-                            buttonText={'Learn More'}
-                        />
-                        <SingleCard
-                            imgClassName={'data-card'}
-                            heading={'Data Driven'}
-                            text={'Track your performance with our weekly review and monthly reports. Experiment with new systems and get actionable data feedback.'}
-                            buttonText={'Learn More'}
-                        />
-                        <SingleCard
-                            fontAwesome={'users'}
-                            heading={'Find Your Tribe!'}
-                            text={'Build supporting relationships and communities with the people that share your dream, whatever that dream might be.'}
-                            buttonText={'Learn More'}
-                        />
-                    </CardDeck>
-                    </Col>
-                </Row>
                 <FullWidth
                     className={'success'}
                     heading={'Ready to Accelerate Your Success?'}
