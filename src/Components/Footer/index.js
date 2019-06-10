@@ -2,7 +2,6 @@ import React from 'react'
 import { Row, Col, Jumbotron } from "react-bootstrap";
 import FontAwesome from 'react-fontawesome';
 import './footer.scss'
-import TopNavigation from '../Navbar';
 
 const year = new Date().getFullYear();
 
@@ -14,13 +13,7 @@ const Footer = () => (
                     name='instagram'
                     size='2x'
                     tag='a'
-                    href='www.instagram.com'
-                />
-                <FontAwesome
-                    name='twitter'
-                    size='2x'
-                    tag='a'
-                    href='www.twitter.com'
+                    href='https://www.instagram.com/nomadic_drew/'
                 />
                 <FontAwesome
                     name='envelope'

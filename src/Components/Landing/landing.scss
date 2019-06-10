@@ -2,16 +2,27 @@
 
 //TODO: Use extensions and inheritance for section spacing
 
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
 .jumbotron {
   background-color: white;
   border-radius: 0;
+  width: 100vw;
+  margin-bottom: 0;
 }
 .heroTop {
   background-image: url('../../Assets/images/backlit.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 80% 20%;
-  height: 500px;
+  height: 600px;
+  margin-bottom: 0;
 
   .heroTop-container {
     color: #FFF;
@@ -23,14 +34,26 @@
     margin-top: 1.5em;
     margin-bottom: .5em;
   }
+
+  p {
+    font-size: 1.4em;
+  }
 }
 
 .main-points {
   h6 {
     color: $smoke;
+    margin-bottom: 2em;
+  }
+  p {
+    font-size: 1.1em;
   }
   .row {
     margin-bottom: $component-spacing;
+  }
+  .quoteLine {
+    color: white;
+    margin-left: -20px;
   }
   .icon {
     display: flex;
@@ -49,9 +72,11 @@
 }
 
 .steps {
+  padding-bottom: 0em;
+
   h1 {
     text-align: center;
-    font-size: 4em;
+    font-size: 3em;
     margin-bottom: 1.4em;
   }
 }
@@ -65,18 +90,33 @@
 
 .charity-card-body {
   text-align: center;
+
+  .card-title {
+    font-size: 1.2em;
+    padding-top: 1em;
+  }
+
+  p {
+    font-size: 1.7em;
+  }
 }
 
 .charity-amount {
-  font-size: 1.5em;
+  font-size: 2em;
   width: 100%;
   text-align: center;
 }
+
 .quoteLine {
   text-align: center;
   padding: 1.5em;
+  width: 100vw;
+  color: white;
+  font-size: 1.2em;
+  margin-bottom: 0;
 
   h4 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.3em;
     margin: 0;
   }
@@ -87,14 +127,18 @@
 //}
 
 .card-row {
+  background-color: $offWhite;
   padding: $component-spacing 0;
+
+  .justify-content-md-center {
+    margin-bottom: 3em;
+  }
 
   .card-deck {
     justify-content: center;
 
     .card {
       box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-      padding: 2em;
       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
       max-width: 400px;
       margin-right: 1.4em;
@@ -102,20 +146,47 @@
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
       }
 
+      .card-body {
+        font-size: 1em;
+        position: relative;
+        top: -1.7em;
+
+        .card-title {
+          font-size: 1.5em;
+          text-align: center;
+        }
+      }
+
       .fa {
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         color: white;
         margin: 10px auto 0 auto;
         font-size: 4em;
-        background-color: $darkBlue;
+        background-color: #08708A;
         border-radius: 100%;
         padding: 20px;
+        position: relative;
+        top: -.7em;
+      }
+      .card-button {
+        //background-color: $blue;
+        //border-color: $blue;
       }
     }
   }
 }
 
+.data-driven,
+.steps {
+  padding-top: 6em;
+  margin-bottom: 0;
+}
 
+.data-driven,
+.testimonials {
+  background-color: $offWhite;
+
+}
 
 .heading {
   margin-bottom: 1em;
@@ -176,8 +247,44 @@
   background-color: transparent;
 }
 
-.testimonialCard {
-  padding-top: 0;
+.testimonials {
+  justify-content: center;
+  padding: $component-spacing 2em;
+
+  .heading {
+    display: block;
+    font-size: 3em;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 2em;
+    width: 100%
+  }
+  .testimonialCard {
+    padding-top: 0;
+  }
+}
+
+.testimonial-card {
+  display: block;
+  margin: auto;
+
+  .card-title {
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: .5em;
+  }
+
+  p {
+    font-size: 1.1em;
+    text-align: center;
+  }
+}
+
+.application-button {
+  display: block;
+  margin: 2em auto;
+  font-size: 1.4em;
+  width: 9em;
 }
 
 .blockquote-footer {

@@ -14,10 +14,14 @@ import {
     }
     from 'react-bootstrap';
 import dawn from '../../Assets/images/dawn.jpg'
-import mlk from '../../Assets/images/seenTheMountainTop.jpg'
+// import mlk from '../../Assets/images/seenTheMountainTop.jpg'
 import furiosa from '../../Assets/images/furiosa.jpg'
 import sarah from '../../Assets/images/sarah.png'
 import dashboardExample from '../../Assets/images/dashboardExample.png'
+// import refugees from '../../Assets/images/refugees.jpg'
+import smile from '../../Assets/images/smile.jpg'
+import * as ROUTES from '../../Constants/routes';
+import { Link } from 'react-router-dom';
 
 
 const FullWidth = (props) => (
@@ -68,7 +72,7 @@ QuoteLine.propTypes = {
 };
 
 const SingleCard = (props) => (
-    <Card className={props.cardClassName} style={{ width: '18rem' }}>
+    <Card className={props.cardClassName} style={{ width: '16rem' }}>
         {/*<Card.Img variant="top" src={props.image} className={props.imgClassName}/>*/}
         <FontAwesome
             name={props.fontAwesome}
@@ -80,7 +84,7 @@ const SingleCard = (props) => (
             <Card.Text>
                 {props.text}
             </Card.Text>
-            { props.buttonText ? <Button variant="primary">{props.buttonText}</Button> : null }
+            { props.buttonText ? <Button className='card-button' href={props.link}>{props.buttonText}</Button> : null }
         </Card.Body>
     </Card>
 );
@@ -151,11 +155,10 @@ const Testimonial = (props) => (
             <footer className="blockquote-footer">
                 {props.source}
             </footer>
-            <Card.Link href="#">{props.linkText}</Card.Link>
+            <Card.Link href={props.link}>{props.linkText}</Card.Link>
         </Card.Body>
     </Card>
 );
-
 
 Testimonial.propTypes = {
     cardClassName: PropTypes.string,
@@ -168,19 +171,46 @@ Testimonial.propTypes = {
     linkText: PropTypes.string,
 };
 
-
-
 export default class Landing extends React.Component {
-
     render() {
         return (
             <div className='landingPage'>
                 <FullWidth
                     className={'heroTop'}
-                    heading={'Your Personal Board of Advisers'}
-                    text={'Accelerate your dreams with community-based accountability, support and personal growth.'}
+                    heading={'Genuine Connection. Routine Accountability. \n' +
+                    'Your Personal Board of Advisers.'}
+                    text={'The modern mastermind network for remote workers and entrepreneurs.'}
                 />
-                <Jumbotron className='main-points'>
+                <Row className='card-row'>
+                    <Col>
+                        {/*<Row className='justify-content-md-center'>*/}
+                        {/*        <h3>Complete Support for Your Dream</h3>*/}
+                        {/*</Row>*/}
+                        <CardDeck className={'card-deck'}>
+                            <SingleCard
+                                fontAwesome={'users'}
+                                heading={'Find Your Tribe'}
+                                text={"It's difficult finding people that inspire you. Let us connect you with people as driven as you. Facilitated weekly meetings with your tribe for crowd-sourcing wisdom, setting goals and accountability."}
+                                buttonText={'Learn More ->'}
+                                link={'#tibe'}
+                            />
+                            <SingleCard
+                                fontAwesome={'link'}
+                                heading={'Real Accountability'}
+                                text={'Leverage accountability in our proven system to supercharge productivity on the  things that matter most. Imagine what you can get done with an entire team holding you accountable to your dreams.'}
+                                buttonText={'Learn More ->'}
+                                link={'#accounting'}
+                            />
+                            <SingleCard
+                                imgClassName={'data-card'}
+                                heading={'Data Driven'}
+                                text={'Use our tools to set goals and track your performance each week. Measure key areas such as physical health, mindfulness, courage & clarity. Use this data to gain key insights into your behavior patterns over the long term.'}
+                                buttonText={'Learn More ->'}
+                            />
+                        </CardDeck>
+                    </Col>
+                </Row>
+                <Jumbotron className='main-points accounting'>
                     <Row>
                         <Col lg='2' className='icon'>
                         <FontAwesome
@@ -188,23 +218,36 @@ export default class Landing extends React.Component {
                             size='2x'
                         />
                     </Col>
-                        <Col lg='6'>
-                            <h3>Get Accountability</h3>
-                            <p>Studies show that accountability is the most important component of productivity. Set your goals weekly with your group and assign each goal a dollar value that works for you. If you don't hit your goal, that money is donated to charity. Do good by doing bad by leveraging the latest research in reward systems.</p>
+                        <Col id='accounting' lg='6'>
+                            <h3>Leverage Accountability</h3>
+                            <h6>For what REALLY matters</h6>
+                            <p>Why do we always get stuff done for a tough boss, often even at the expense of our own health and dreams? The boss holds you accountable with real consequences.</p>
+                            <p>But a boss won't hold you to your dreams. A boss won't make sure you're writing the book, building the business or creating the art that's in your heart. That's where your tribe comes in.</p>
+                            <p>Each week, we set goals around the things that matter most to us. We report to our tribe about what we've gotten done and what targets we failed to hit.</p>
+                            <p>We create real consequences by assigning a money amount to each goal. If you miss a goal, you have to answer to the tribe and donate that money to charity.</p>
+                            <p>The future of the economy is self-employment. It's time to create new models of accountability.</p>
                         </Col>
                         <Col lg='4'>
                             <Card bg='light'>
                                 {/*<Card.Img src="holder.js/100px270" alt="Card image" />*/}
                                 <Card.Body className='charity-card-body'>
+                                    <Card.Img variant="top" src={smile}/>
                                     <Card.Title>Total Missed Goal Donations</Card.Title>
                                     <Card.Text className='charity-amount'>
                                         $1000
                                     </Card.Text>
-                                    <Card.Link href="#">Learn more who we support</Card.Link>
+                                    <Card.Link href="http://www.givedirectly.com">100% of Missed Goal Donations Support the Refugee Crisis</Card.Link>
                                 </Card.Body>
                             </Card>
                         </Col>
                     </Row>
+                </Jumbotron>
+                <QuoteLine
+                    className={'quoteLine'}
+                    backgroundColor={'#56B1BF'}
+                    quote={'"You are the average of the five people you spend the most time with." - Jim Rohn'}
+                />
+                <Jumbotron className='main-points data-driven'>
                     <Row>
                         <Col lg='2' className='icon'>
                             <FontAwesome
@@ -213,15 +256,22 @@ export default class Landing extends React.Component {
                             />
                         </Col>
                         <Col lg='6'>
-                            <h3>Data Driven</h3>
+                            <h3>Data Driven Insights into You</h3>
                             <h6>Take the 'woo' out of personal development</h6>
-                            <p>Each member has a Performance Dashboard that tracks their performance in key categories week to week. By completing a weekly review, we track our focus, clarity, accountability, mindfulness, courage productivity & energy. By looking at this data over the long term, we gain valuable insights into our behavior patterns.</p>
-                            <Button>Example Dashboard</Button>
+                            <p>Use our tools to rate your performance each week in key areas of life, including: focus, clarity, mindfulness, courage, productivity & energy. This data is presented in your performance dashboard - giving you key insights into the relationship between different aspects of life.</p>
+                            <p>Over the long term, this data give us valuable insights into our behavior patterns. Curious about the relationship between exercise and productivity? Diet and mental clarity? So are we.</p>
+                            <Button href='https://datastudio.google.com/s/oIx13t87wMc' target='_blank'>Example Dashboard</Button>
                         </Col>
                         <Col lg='4'>
                             <Image src={dashboardExample} thumbnail />
                         </Col>
                     </Row>
+                </Jumbotron>
+                <QuoteLine
+                    className={'quoteLine'}
+                    quote={'"What gets measured, gets managed." - Peter Drucker'}
+                />
+                <Jumbotron className='main-points accounting'>
                     <Row>
                         <Col lg='2' className='icon'>
                             <FontAwesome
@@ -231,14 +281,21 @@ export default class Landing extends React.Component {
                         </Col>
                         <Col lg='9'>
                             <h3>Find Your Tribe</h3>
-                            <h6>Crowd Source Your Dreams</h6>
-                            <p>With the rise of freelancers, remote workers and soloprenuers, we're more isolated than ever. Find a group of people that share your dreams and values that you can share your insights, struggles and victories with. One person's insights can save you weeks or months of trying to figure out something on your own. Community is everything.</p>
-                            <Button>Apply Today</Button>
+                            <h6>Crowd source your success</h6>
+                            <p>The economy is changing. There's more remote workers, freelancers and entrepreneurs than ever before. This means we're more empowered... but also more isolated.</p>
+                            <p>Your tribe is a group of people that share your struggles, dreams and values. They are a source of inspiration, information and best practices. They are your personal board of advisers.</p>
+                            <p>Someone's insight can save weeks or months of trying to figure out something on your own. Community is everything - including a strong predictor of health and success. Develop genuine relationships with a tribe of people that share your ambitions and are invested in your success.</p>
+                            <Button href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Apply Now</Button>
                         </Col>
                     </Row>
                 </Jumbotron>
+                <QuoteLine
+                    className={'quoteLine'}
+                    backgroundColor={'#08708A'}
+                    quote={'Collaboration is the new competition.'}
+                />
                 <Jumbotron className='steps'>
-                    <h1>How it Works</h1>
+                    <h1>We're Better Together</h1>
                     <Row className='steps-row'>
                         <Col lg='2'>
                             <h1>1.</h1>
@@ -260,124 +317,9 @@ export default class Landing extends React.Component {
                         </Col>
                     </Row>
                 </Jumbotron>
-                {/*<Row className={'card-row'}>*/}
-                {/*    <Col>*/}
-                {/*    <CardDeck className={'card-deck'}>*/}
-                {/*        <SingleCard*/}
-                {/*            fontAwesome={'link'}*/}
-                {/*            heading={'Accountability Chain'}*/}
-                {/*            text={'Imagine what you could get done with an inspired group of people keeping you focused. Members are plugged into our Accountability Chain for that crucial external accountability.'}*/}
-                {/*            buttonText={'Learn More'}*/}
-                {/*        />*/}
-                {/*        <SingleCard*/}
-                {/*            imgClassName={'data-card'}*/}
-                {/*            heading={'Data Driven'}*/}
-                {/*            text={'Track your performance with our weekly review and monthly reports. Experiment with new systems and get actionable data feedback.'}*/}
-                {/*            buttonText={'Learn More'}*/}
-                {/*        />*/}
-                {/*        <SingleCard*/}
-                {/*            fontAwesome={'users'}*/}
-                {/*            heading={'Find Your Tribe!'}*/}
-                {/*            text={'Build supporting relationships and communities with the people that share your dream, whatever that dream might be.'}*/}
-                {/*            buttonText={'Learn More'}*/}
-                {/*        />*/}
-                {/*    </CardDeck>*/}
-                {/*    </Col>*/}
-                {/*</Row>*/}
-                <QuoteLine
-                    className={'quoteLine'}
-                    quote={'"You are the average of the five people you spend the most time with." - Jim Rohn'}
-                />
-                <FullWidth
-                    className={'success'}
-                    heading={'Ready to Accelerate Your Success?'}
-                    text={'If you have big dreams but suffer from a lack of structure... if you have specific goals but can\'t seem achieve them... if you know you need more guidance, accountability or motivation... then we are going to change your life.\n' +
-                    '\n' +
-                    'What most people do when facing these problems is try every new shiny object that comes along. An online course... the book everyone is reading... a new "10 step" fad... and the list goes on. But for most people, none of that works because it\'s missing an essential ingredients: community and accountability.'}
-                />
-                <Row className={'fiftyfifty'}>
-                    <Col>
-                        <Container>
-                            <h4 className={'heading'}>Collaboration is the New Competition</h4>
-                            <br />
-                            <div className={'fiftyText'}>
-                                <p>We helps members get and stay unstuck by providing community, coaching and accountability that sparks transformation growth.</p>
-                                <br />
-                                <p>Our members and guest coaches take an active interest in each others' lives, careers and goals. Members benefit from the knowledge of the group and the open exchange of business and personal development expertise.</p>
-                            </div>
-                        </Container>
-                    </Col>
-                    <Col>
-                        <Container>
-                            <Image className={'fiftyImage'} src={dawn} />
-                        </Container>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Jumbotron className={'support'}>
-                            <Container className={'support-container'}>
-                                <h4 className={'heading'}>Imagine What You Would Accomplish with Enough Support.</h4>
-                                <p className={'fullwidth-text'}>
-                                    How would your life change if you had a group of like-minded individuals that you could turn to on a daily basis? Would you feel less stressed? Would you be more effective, energized and inspired?</p>
-                                    <br />
-                                    <p>We help bring focus and clarity to members' lives so they can become better people, professionals, entrepreneurs, parents and partners. We listen to each others' challenges and opportunities. We work together to identify and eliminate what's holding you back and provide fresh insights to help you achieve your goals.
-                                </p>
-                            </Container>
-                        </Jumbotron>
-                    </Col>
-                </Row>
-                <Row className={['fiftyfifty', 'mountain']}>
-                    <Col lg={6}>
-                        <Container>
-                            <Image className={'fiftyImage'} src={mlk} />
-                        </Container>
-                    </Col>
-                    <Col>
-                        <Container className={'text-container'}>
-                            <h4 className={'heading'}>Our Accountability Tools</h4>
-                            <br />
-                            <div className={'fiftyText'}>
-                                <ul>
-                                    <li>Weekly mastermind calls</li>
-                                    <li>Active Slack channel</li>
-                                    <li>Annual in person retreat</li>
-                                    <li>Set weekly goals and review your previous week</li>
-                                    <li>Goals are posted and tracked</li>
-                                    <li>Exercises to help you get focused</li>
-                                </ul>
-                            </div>
-                        </Container>
-                    </Col>
-                </Row>
-                <FullWidth
-                    className={'network'}
-                    heading={'High Performance Coaching Network'}
-                    text={'Each of our members can provide valuable perspectives and insights, but we want to also stand on the shoulder of giants for particular topics. \n' +
-                    '\n' +
-                    'Each month, we identify an area that would have the most impact on the group. We then search for an expert on that topic and invite them to speak to our mastermind. Not only will you learn from the amazing members in our group, but also personal development and business experts with years of experience in a particular field.\n' +
-                    '\n' +
-                    'See our previous guest coaches and our planned upcoming coaches.'}
-                />
-                <FullWidth
-                    className={'data'}
-                    heading={'Let Data Guide Your Growth'}
-                    text={'We believe in the power of data. As a member, you will track key personal metrics such as happiness, productivity and distraction. By measuring these data points over time, you will gain new insights and will be able to make smarter decisions about where to focus your attention. \n' +
-                    '\n' +
-                    'We also leverage this data to determine the mastermind\'s opportunities for growth. This information is used to bring in expert coaches that will help us collectively get to the next level.\n' +
-                    '\n'}
-                    containedComponent={<FullWidth
-                        className={'data-2'}
-                        heading={'Harness the Power of Data'}
-                        text={'Use our tool to complete weekly reflections\n' +
-                        'Record key personal stats such as feelings of joy, purpose and productivity\n' +
-                        'Access graphs that show your long term trends\n' +
-                        'Use these insights to take targeted actions to improve your performance\n'}
-                    />}
-                />
-                <Row className={'card-row'}>
-                    <h4 className={'heading'}>What Our Members Are Saying</h4>
-                    <CardDeck>
+                <Row className={'testimonials'}>
+                    <h2 className={'heading'}>Member Testimonials</h2>
+                    <CardDeck className='testimonial-cardDeck'>
                         <Col lg ='6'>
                             <Testimonial
                                 cardClassName={'testimonialCard'}
@@ -386,6 +328,7 @@ export default class Landing extends React.Component {
                                 text={'“I’ve never felt so much clarity, consistency, and direction both creatively and professionally. Joining the Mastermind has made life go by slower because I use time more efficiently. With a weekly board of advisers to guide my entrepreneurial endeavors, I’m seeing a wealth of growth and learning and even entrepreneurial success with my progress. This isn’t just an investment, it’s a road map to fulfillment.”'}
                                 source={'Quin, Host of Mania Podcast'}
                                 linkText={'Learn more about Quin'}
+                                link={"http://harlequingrim.com/"}
                             />
                         </Col>
                         <Col lg='6'>
@@ -400,6 +343,21 @@ export default class Landing extends React.Component {
                         </Col>
                     </CardDeck>
                 </Row>
+                <Jumbotron>
+                    <Card className='testimonial-card' style={{ width: '30rem' }}>
+                        <Card.Img variant="top" src={dawn} className='testimonial-image'/>
+                        <Card.Body>
+                            <Card.Title>Join Us</Card.Title>
+                            <Card.Text>
+                                <p>Membership dues are $75 / month.</p>
+                                <p>Members are chosen selectively after an application and interview.</p>
+                                <p>Read about our values <Link to={ROUTES.VALUES}>here.</Link></p>
+                            </Card.Text>
+                            <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Apply Now</Button>
+                            <p>No one will be turned away for lack of money.</p>
+                        </Card.Body>
+                    </Card>
+                </Jumbotron>
             </div>
         )
     }

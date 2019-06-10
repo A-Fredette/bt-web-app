@@ -7,3 +7,8 @@ export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const WEEKLY_REVIEW = '/weeklyreview';
+
+export const WHY = '/why';
+export const VALUES = '/values';
+export const FOUNDER = '/founder';
+export const APPLY = '/application  ';
