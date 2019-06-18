@@ -22,7 +22,7 @@ import Footer from '../Footer';
 
 import * as ROUTES from '../../Constants/routes';
 
-import { withFirebase } from '../Firebase/firebase';
+// import { withFirebase } from '../Firebase/firebase';
 
 class App extends Component {
     constructor(props) {
@@ -33,26 +33,26 @@ class App extends Component {
         };
     }
 
-    componentDidMount() {
-        this.listener = this.props.firebase.auth.onAuthStateChanged(
-            authUser => {
-                authUser
-                    ? this.setState({ authUser })
-                    : this.setState({ authUser: null });
-            },
-        );
-    }
+    // componentDidMount() {
+    //     this.listener = this.props.firebase.auth.onAuthStateChanged(
+    //         authUser => {
+    //             authUser
+    //                 ? this.setState({ authUser })
+    //                 : this.setState({ authUser: null });
+    //         },
+    //     );
+    // }
 
-    // Added to avoid memory leaks from an unnecessary listener
-    componentWillUnmount() {
-        this.listener();
-    }
+    // // Added to avoid memory leaks from an unnecessary listener
+    // componentWillUnmount() {
+    //     this.listener();
+    // }
 
     render() {
         return(
             <div className="app-container">
                 <Router>
-                    <TopNavigation authUser={this.state.authUser}
+                    <TopNavigation
                         fixed='top'
                     />
                     <Route exact path={ROUTES.LANDING} component={LandingPage} />
@@ -75,4 +75,4 @@ class App extends Component {
     }
 }
 
-export default withFirebase(App);
+export default App;

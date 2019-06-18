@@ -1,7 +1,12 @@
 {
-  "name": "web-app",
-  "version": "0.1.0",
+  "name": "better-together",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://bt-m-site.herokuapp.com/",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
@@ -19,8 +24,7 @@
     "recompose": "^0.30.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "dev": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
