@@ -10,8 +10,38 @@ h3 {
   font-size: 2rem;
 }
 
+h6 {
+  font-size: 1.1rem;
+}
+
+.center-h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 1.4em;
+}
+
+.landing-section {
+  padding: 4em 6em;
+
+  div {
+    padding-bottom: 1.5em;
+  }
+}
+
+.card-heading {
+  padding-bottom: 0;
+}
+
+.offwhite {
+  background-color: $offWhite;
+}
+
+.white {
+  background-color: #FFFFFF;
+}
+
 .jumbotron {
-  background-color: white;
+  //background-color: white;
   border-radius: 0;
   width: 100vw;
   margin-bottom: 0;
@@ -31,6 +61,12 @@ h3 {
 
   h4 {
     font-size: 3.5em;
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+  }
+
+  h3 {
+    font-size: 2.5em;
     margin-top: 1.5em;
     margin-bottom: .5em;
   }
@@ -180,12 +216,6 @@ h3 {
 .steps {
   padding-top: 6em;
   margin-bottom: 0;
-}
-
-.data-driven,
-.testimonials {
-  background-color: $offWhite;
-
 }
 
 .heading {

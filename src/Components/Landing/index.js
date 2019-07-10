@@ -10,7 +10,8 @@ import {
     Row,
     Col,
     Image,
-    CardDeck
+    CardDeck,
+    Accordion
     }
     from 'react-bootstrap';
 import dawn from '../../Assets/images/dawn.jpg'
@@ -27,7 +28,7 @@ import { Link } from 'react-router-dom';
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
         <Container className={props.className+'-container'}>
-            <h4 className={'heading'}>{props.heading}</h4>
+            <h3 className={'heading'}>{props.heading}</h3>
             <p className={'fullwidth-text'}>{props.text}</p>
             { props.buttonText ? <Button variant={props.buttonColor}>{props.buttonText}</Button> : null }
         </Container>
@@ -38,8 +39,7 @@ const FullWidth = (props) => (
 FullWidth.defaultProps = {
     size: 'fluid', // pass '' instead of 'fluid' for not full-width
     buttonColor: 'primary',
-    heading: 'Heading Here',
-    text: 'Text here'
+    heading: 'Heading Here'
 };
 
 FullWidth.propTypes = {
@@ -177,10 +177,44 @@ export default class Landing extends React.Component {
             <div className='landingPage'>
                 <FullWidth
                     className={'heroTop'}
-                    heading={'Genuine Connection. Routine Accountability. \n' +
-                    'Your Personal Board of Advisers.'}
-                    text={'The modern mastermind network for remote workers and entrepreneurs.'}
+                    heading={'The mastermind network that holds you accountable to the dreams that matter most'}
+                    // text={'Make real progress through community & accountability.'}
                 />
+                <Row className='landing-section'>
+                    <div>  <h5>There's a dream you can't ignore.</h5></div>
+                    <div>
+                        <h5>You want a better life and know you're capable of accomplishing more... but you're not as consistent, organized and focused as you should be.</h5>
+                        <h5>Other things keep getting in the way.</h5>
+                    </div>
+                    <div>
+                        <h5>You've tried everything... new routines... planners... courses... but nothing really sticks. </h5>
+                        <h5>And you've been really hard on yourself because of it. Beating yourself up for missed goals and failed systems.</h5>
+                    </div>
+                    <div>
+                        <h5>But you should be deeply proud of your efforts. You're putting in the effort where most people aren't.</h5>
+                    </div>
+                    <div>
+                        <h5>Every system that doesn't work is one step closer to finding what does work. Plus, you were missing the essential ingredient: <b>community accountability.</b></h5>
+
+                    </div>
+                </Row>
+                <Row className='landing-section offwhite card-heading'>
+
+                        <h3>Introducing a system for achieving your goals that leverages the power of community accountability</h3>
+                    {/*</div>*/}
+                    {/*<div>*/}
+                    {/*    <ul>*/}
+                    {/*        <li>Know exactly what you need to work on every week.</li>*/}
+                    {/*        <li>Answer to a group of peers.</li>*/}
+                    {/*        <li>Develop genuine relationships with people that can change your life.</li>*/}
+                    {/*        <li>Easily track your progress towards your goals.</li>*/}
+                    {/*        <li>Focus more on what really matters.</li>*/}
+                    {/*        <li>Connect to a growth-oriented community.</li>*/}
+                    {/*        <li>Know exactly what you needed to work on every week.</li>*/}
+                    {/*        <li>Know exactly what you needed to work on every week.</li>*/}
+                    {/*    </ul>*/}
+                    {/*</div>*/}
+                </Row>
                 <Row className='card-row'>
                     <Col>
                         {/*<Row className='justify-content-md-center'>*/}
@@ -204,13 +238,27 @@ export default class Landing extends React.Component {
                             <SingleCard
                                 imgClassName={'data-card'}
                                 heading={'Data Driven'}
-                                text={'Use our tools to set goals and track your performance each week. Measure key areas such as physical health, mindfulness, courage & clarity. Use this data to gain key insights into your behavior patterns over the long term.'}
+                                text={'Use our tools to set goals and track your performance each week. Measure key areas such as physical health, mindfulness, courage & clarity. Use this data to gain key insights into your behavior patterns and optimize your performance.'}
                                 buttonText={'Learn More ->'}
                             />
                         </CardDeck>
                     </Col>
                 </Row>
-                <Jumbotron className='main-points accounting'>
+                <Row className='landing-section'>
+                    <h2>The System Created to Realize My Dreams, Shared with You</h2>
+                    <div>
+                        <p>Hi! I'm Andrew, digital nomad, software engineer and founder of Better Together. I realized that it was hard for me to find people that would routinely ask me the hard questions. Did I do the things that I said I was going to do? Am I living up to my potential? When I had conversations with my friends that asked the hard questions... I always felt a renewed focus and inspiration. I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can be so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.</p>
+                    </div>
+                        <div>
+                            <p>Since starting the mastermind, my life has transformed. I've been travelling full time since April 2018 as a digital nomad, working online as a software engineer and now as a social entrepreneur. It's truly a dream come true. I want to help as many people as possible achieve their dreams - especially if the dream is unconventional.</p>
+                        </div>
+                        <p>Organically, the mastermind started to grow and I realized how much we need positive accountability and community. Supporting others' dreams became a passion, and in the fall of 2018, I decided to build Better Together into a global network and make this one of my primary missions.
+
+                        I've built an incredible mastermind model, community and set of tools to help you achieve your goals, and I can't wait to share them with you. I want to be feel that you are sprinting full speed towards your dreams.</p>
+                            <h5>Humanity doesn't benefit from your success if you never grow into the person you're meant to be.</h5>
+
+                </Row>
+                <Jumbotron className='main-points accounting offwhite'>
                     <Row>
                         <Col lg='2' className='icon'>
                         <FontAwesome
@@ -247,7 +295,7 @@ export default class Landing extends React.Component {
                     backgroundColor={'#56B1BF'}
                     quote={'"You are the average of the five people you spend the most time with." - Jim Rohn'}
                 />
-                <Jumbotron className='main-points data-driven'>
+                <Jumbotron className='main-points data-driven white'>
                     <Row>
                         <Col lg='2' className='icon'>
                             <FontAwesome
@@ -271,7 +319,7 @@ export default class Landing extends React.Component {
                     className={'quoteLine'}
                     quote={'"What gets measured, gets managed." - Peter Drucker'}
                 />
-                <Jumbotron className='main-points accounting'>
+                <Jumbotron className='main-points accounting offwhite'>
                     <Row>
                         <Col lg='2' className='icon'>
                             <FontAwesome
@@ -294,30 +342,228 @@ export default class Landing extends React.Component {
                     backgroundColor={'#08708A'}
                     quote={'Collaboration is the new competition.'}
                 />
-                <Jumbotron className='steps'>
-                    <h1>We're Better Together</h1>
-                    <Row className='steps-row'>
-                        <Col lg='2'>
-                            <h1>1.</h1>
-                        </Col>
-                        <Col lg='2'>
-                            <h2>Apply & get matched with your tribe.</h2>
-                        </Col>
-                        <Col lg='2'>
-                            <h1>2.</h1>
-                        </Col>
-                        <Col lg='2'>
-                            <h2>Meet weekly in a curated small group.</h2>
-                        </Col>
-                        <Col lg='2'>
-                            <h1>3.</h1>
-                        </Col>
-                        <Col lg='2'>
-                            <h2>Track your progress using our tools.</h2>
-                        </Col>
+                <Jumbotron className='white'>
+                    <h1 className={'center-h1'}>FAQ</h1>
+                    <Row>
+                    <Col>
+                    <Accordion defaultActiveKey="3">
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                                What is a mastermind?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body>A mastermind is a routine meeting with entrepreneurs to discuss business and personal development. It's an incredibly effective model used by some of the brightest and most successful people, including entrepreneurs such as Peter Diamandis, Brendon Bruchard, Pat Flynn, Dean Grigrosi and Lewis Howes. Every mastermind uses different structures and has different goals, but our key outcomes are productivity, community and growth.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="1">
+                                What makes your mastermind different than others?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="1">
+                                <Card.Body>There are several low cost “masterminds” ($7 - 30/month) that are really just monthly trainings, often conducted in something like a facebook group. This type of mastermind is essentially a subscription to monthly webinars. A real mastermind, such as ours, consists of member dialogue and relationships, and is not a group coaching session. These often cost anywhere between $500 - $6,000 a month.
+
+                                    Better Together is a mastermind in the true sense of the term - a group of members collaborating and supporting each others’ success. We also have an exclusive set of tools and a unique meeting structure. All of our members use our weekly review to reflect on and measure their progress in key areas for each session. These reviews are used to create Performance Dashboards for each member so they can gauge their progress over time. Our meeting format has also been adjusted for over 2 years to find the most effective model.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="2">
+                                How does Better Together work?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="2">
+                                <Card.Body>If you have applied and been offered an invitation to join, you’ll be placed in a mastermind tribe based on your scheduled availability and similar interests with other members. You’ll have weekly accountability meetings to track, measure and improve on your goals. You’ll also have the opportunity to share your challenges in order to crowd-source wisdom and strategies. We have found that someone’s insight can save you weeks or even months of trying to figure out something on your own. Better Together is best thought of as a structured accountability network with a set of exclusive tools to help keep you focused and accountable. Membership will also come with the added benefit of optional monthly training and in-person events.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="3">
+                                How many people will be in my mastermind?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="3">
+                                <Card.Body>Each mastermind tribe is limited to 10 people. This allows for real relationships to form between members and for everyone to have an opportunity to join in conversations. We also make efforts to group members based on shared goals.
+
+                                    Each member also has access to the wider network - all members in all tribes - via a Slack channel and optional monthly network-wide trainings and live events.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="4">
+                                Is there a limit to the number of people that can join the network?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="4">
+                                <Card.Body>Yes. The goals of Better Together is to reach a threshold of 100 members by 10 mastermind "tribes" of 10.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="5">
+                                Are there any events with the entire network?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="5">
+                                <Card.Body>Yes! Once a month there will be web trainings focused on a personal development or business topic. These are optional, but a great way to interact with the larger community.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="6">
+                                Are there any live events?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="6">
+                                <Card.Body>We've hosted live retreats in the past, and while there's nothing currently planned, there will eventually be live retreats and business hackathons in the digital nomad spirit. For these, we meet in person for focused work and personal development sessions.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="7">
+                                What is the cost of joining?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="7">
+                                <Card.Body>We have a dynamic pricing model based on the number of members that have already joined. Your price will never change. If you're an early adopter and join at $49/month, that will be your price for life.
+
+                                    0 - 10 members: $49/month
+                                    11 - 30 members: $99/month
+                                    31 - 60 members: $149/month
+                                    61 - 100 members: $199/month
+
+                                    Membership dues can be paid on a monthly, quarterly or yearly basis.
+
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="8">
+                                Is there a money back guarantee?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="8">
+                                <Card.Body>Yes! If you decide that the community is not a good fit for you, there's a 100% money back guarantee within the first 30 days - no questions asked. After the 30 days you can cancel anytime.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="9">
+                                I can't afford a membership, but I still want to join. What are my options?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="9">
+                                <Card.Body>If someone has successfully applied but genuinely can't afford membership dues, they are welcome to apply for work-trade. We will never turn anyone away for lack of money. There was a period of my life where I couldn't afford to join communities such as this, but I know that they would've transformed my life. I won't let that happen to you.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+                    </Col>
+                    <Col>
+                        <Accordion defaultActiveKey="13">
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="10">
+                                Is there a money back guarantee?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="10">
+                                <Card.Body>Yes! If you decide that the community is not a good fit for you, there's a 100% money back guarantee within the first 30 days - no questions asked. After the 30 days you can cancel anytime.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="11">
+                                Can I cancel anytime?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="11">
+                                <Card.Body>Of course. If you feel like it's time to move on, no one will try to stop you.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="12">
+                                How do you decide who can join?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="12">
+                                <Card.Body>Members are selectively offered invitations based on shared values. A community is only as healthy as our individuals, so applicants are prioritized based on common values of:
+
+                                    Open Mindedness: We love to learn and are open to new ideas. We think critically and embrace fresh and challenging ideas.
+
+                                    Growth Mindset: We believe that we can develop whatever new skill we set our minds to. We acknowledge that we are not born with a fixed amount of talent in any category.
+
+                                    Accountability: We want to encourage and inspire the people around us to live their best possible lives. We are not afraid to hold others to the high standards they have set for themselves. We aren’t scared to ask the hard questions.
+
+                                    Service Mindset: We believe that through our work and self-actualization, we can make the world a better place.
+
+                                    Support: We seek to build others up and encourage their success.
+
+                                    Authenticity: In the age of Instagram filters, we dare to value true authenticity as a tool for healing broken communities. We believe that honestly sharing our struggles as well as our triumphs is the path for connection.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="13">
+                                Who is Better Together for?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="13">
+                                <Card.Body>It's for people that want to get shit done! It’s for people that know that they would benefit from joining a community focused on accountability and support. Better Together is for anyone with a dream - especially if that dream is unconventional. It's for people who share our values.
+
+                                    We are usually most attractive to entrepreneurs, nomads, freelancers and artists.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="14">
+                                Do I have to be an entrepreneur to join?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="14">
+                                <Card.Body>No! You just need to be growth-oriented, focused on realizing a dream and working towards it while supporting the other community members in their own endeavours.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="15">
+                                What are the meetings like?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="15">
+                                <Card.Body>Every mastermind in the network follows the same meeting format. Each meeting has the same general components including:
+
+                                    - Wisdom Exchange
+                                    - Weekly Review
+                                    - Accountability Check
+                                    - Goal Setting
+                                    - Rotating Member Spotlight: (Where one member gets the entire group’s focus for one session. They can receive feedback, critical thoughts, or insights on a business or personal challenge.)
+                                    - Tool & Resource Exchange
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="16">
+                                What am I expected to contribute at the meetings?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="16">
+                                <Card.Body>Come prepared to authentically share your big dreams, spend time reviewing your week, set goals and share your insights to help other members.
+                            </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="17">
+                                What can I expect when I join?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="17">
+                                <Card.Body>After joining, you'll work through a couple exercises that every new member completes. These exercises will help you refine and explain your dreams to your new mastermind tribe. The system will be explained to you and you'll be welcomed into the community.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                        <Card>
+                            <Accordion.Toggle as={Card.Header} eventKey="18">
+                                Why did you start this project?
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="18">
+                                <Card.Body>There are more remote workers, nomads, freelancers and entrepreneurs than ever before. This is GREAT—we're more empowered than ever—but we're also more isolated than ever before, living more and more through social media. I want to help empower the dreams of the freelancers, entrepreneurs and artists while also reducing their feeling of isolation by offering a supportive community.
+
+                                    Also, this simple idea: If you don't build it, we don't get it. Humanity as a whole is improved with every person that is able to self-actualize. This is the ethos of Better Together, and we strive to help each person reach success.
+
+                                    We are explicitly reject the famine mentality.
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>
+                    </Col>
                     </Row>
                 </Jumbotron>
-                <Row className={'testimonials'}>
+                <Row className={'testimonials offwhite'}>
                     <h2 className={'heading'}>Member Testimonials</h2>
                     <CardDeck className='testimonial-cardDeck'>
                         <Col lg ='6'>
@@ -343,18 +589,41 @@ export default class Landing extends React.Component {
                         </Col>
                     </CardDeck>
                 </Row>
+                <Jumbotron className='steps white'>
+                    <h1>We're Better Together</h1>
+                    <Row className='steps-row'>
+                        <Col lg='2'>
+                            <h1>1.</h1>
+                        </Col>
+                        <Col lg='2'>
+                            <h2>Apply & get matched with your tribe.</h2>
+                        </Col>
+                        <Col lg='2'>
+                            <h1>2.</h1>
+                        </Col>
+                        <Col lg='2'>
+                            <h2>Meet weekly in a curated small group.</h2>
+                        </Col>
+                        <Col lg='2'>
+                            <h1>3.</h1>
+                        </Col>
+                        <Col lg='2'>
+                            <h2>Track your progress using our tools.</h2>
+                        </Col>
+                    </Row>
+                </Jumbotron>
                 <Jumbotron>
+                    <h2>Spots are limited - reserve yours today to accelerate progress towards your dreams</h2>
+                    <h5>The network has a limit of 100 members. Reserve your spot in a global network of entrepreneurs, artists and high performers before we are closed.</h5>
                     <Card className='testimonial-card' style={{ width: '30rem' }}>
                         <Card.Img variant="top" src={dawn} className='testimonial-image'/>
                         <Card.Body>
                             <Card.Title>Join Us</Card.Title>
                             <Card.Text>
-                                <p>Membership dues are $75 / month.</p>
-                                <p>Members are chosen selectively after an application and interview.</p>
-                                <p>Read about our values <Link to={ROUTES.VALUES}>here.</Link></p>
+                                <p>Membership dues are $99 / month.</p>
+                                <p>Members are chosen selectively after an application and interview while spots available.</p>
                             </Card.Text>
-                            <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Apply Now</Button>
-                            <p>No one will be turned away for lack of money.</p>
+                            <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Reserve Your Spot</Button>
                         </Card.Body>
                     </Card>
                 </Jumbotron>

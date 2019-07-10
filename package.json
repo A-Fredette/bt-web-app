@@ -16,7 +16,7 @@
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
-    "react-bootstrap": "^1.0.0-beta.6",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.5",
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^5.0.0",
