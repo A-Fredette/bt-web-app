@@ -44,7 +44,7 @@ const NavBar = () => (
                 <Link className={'nav-link'} to={ROUTES.LANDING}>Home</Link>
                 <Link className={'nav-link'} to={ROUTES.WHY}>Why This Project?</Link>
                 <Link className={'nav-link'} to={ROUTES.VALUES}>Our Values</Link>
-                <Link className={'nav-link'} to={ROUTES.FOUNDER}>Founder</Link>
+                {/*<Link className={'nav-link'} to={ROUTES.FOUNDER}>Founder</Link>*/}
                 {/*<Link className={'nav-link'} to={ROUTES.ACCOUNT}>My Account</Link>*/}
                 {/*<Link className={'nav-link'} to={ROUTES.WEEKLY_REVIEW}>Weekly Review</Link>*/}
                 {/*<Link className={'nav-link'} to={ROUTES.SIGN_IN}>Sign In</Link>*/}

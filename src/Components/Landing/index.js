@@ -21,9 +21,7 @@ import sarah from '../../Assets/images/sarah.png'
 import dashboardExample from '../../Assets/images/dashboardExample.png'
 // import refugees from '../../Assets/images/refugees.jpg'
 import smile from '../../Assets/images/smile.jpg'
-import * as ROUTES from '../../Constants/routes';
-import { Link } from 'react-router-dom';
-
+import travels from '../../Assets/images/travels.png'
 
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
@@ -38,8 +36,7 @@ const FullWidth = (props) => (
 
 FullWidth.defaultProps = {
     size: 'fluid', // pass '' instead of 'fluid' for not full-width
-    buttonColor: 'primary',
-    heading: 'Heading Here'
+    buttonColor: 'primary'
 };
 
 FullWidth.propTypes = {
@@ -80,7 +77,7 @@ const SingleCard = (props) => (
             // spin
         />
         <Card.Body>
-            <Card.Title>{props.heading}</Card.Title>
+            <Card.Title className='futura-heading'>{props.heading}</Card.Title>
             <Card.Text>
                 {props.text}
             </Card.Text>
@@ -177,30 +174,29 @@ export default class Landing extends React.Component {
             <div className='landingPage'>
                 <FullWidth
                     className={'heroTop'}
-                    heading={'The mastermind network that holds you accountable to the dreams that matter most'}
+                    // heading={'The mastermind network that holds you accountable to the dreams that matter most'}
                     // text={'Make real progress through community & accountability.'}
                 />
-                <Row className='landing-section'>
-                    <div>  <h5>There's a dream you can't ignore.</h5></div>
-                    <div>
-                        <h5>You want a better life and know you're capable of accomplishing more... but you're not as consistent, organized and focused as you should be.</h5>
-                        <h5>Other things keep getting in the way.</h5>
-                    </div>
-                    <div>
-                        <h5>You've tried everything... new routines... planners... courses... but nothing really sticks. </h5>
-                        <h5>And you've been really hard on yourself because of it. Beating yourself up for missed goals and failed systems.</h5>
-                    </div>
-                    <div>
-                        <h5>But you should be deeply proud of your efforts. You're putting in the effort where most people aren't.</h5>
-                    </div>
-                    <div>
-                        <h5>Every system that doesn't work is one step closer to finding what does work. Plus, you were missing the essential ingredient: <b>community accountability.</b></h5>
-
-                    </div>
+                <Row className='landing-section story justify-content-md-center'>
+                    <Col  className={'text-highlight'}>
+                        <div> <h5 className='futura-heading'>There's a dream you can't ignore.</h5></div>
+                        <div>
+                            <p>You want a better life and know you're capable of accomplishing more... but you're not as consistent, organized and focused as you should be.</p>
+                            <p>Other things keep getting in the way.</p>
+                            <p>You've tried everything... new routines... planners... courses... but nothing really sticks. </p>
+                            <p>And you've been really hard on yourself because of it. Beating yourself up for missed goals and failed systems.</p>
+                            <p>But you should be deeply proud of your efforts. You're putting in the effort where most people aren't.</p>
+                            <p>Every system that doesn't work is one step closer to finding what does work.</p>
+                                <div className='futura-heading'>Plus, you were missing the essential ingredient: <b>community accountability.</b></div>
+                        </div>
+                    </Col>
+                    <Col md={4}>
+                        <div className={'dreams-image'}>
+                        </div>
+                    </Col>
                 </Row>
                 <Row className='landing-section offwhite card-heading'>
-
-                        <h3>Introducing a system for achieving your goals that leverages the power of community accountability</h3>
+                    <h3 className='futura-heading'>Introducing a system for achieving your goals that leverages the power of community accountability</h3>
                     {/*</div>*/}
                     {/*<div>*/}
                     {/*    <ul>*/}
@@ -225,38 +221,38 @@ export default class Landing extends React.Component {
                                 fontAwesome={'users'}
                                 heading={'Find Your Tribe'}
                                 text={"It's difficult finding people that inspire you. Let us connect you with people as driven as you. Facilitated weekly meetings with your tribe for crowd-sourcing wisdom, setting goals and accountability."}
-                                buttonText={'Learn More ->'}
+                                buttonText={'Learn More'}
                                 link={'#tibe'}
                             />
                             <SingleCard
                                 fontAwesome={'link'}
                                 heading={'Real Accountability'}
                                 text={'Leverage accountability in our proven system to supercharge productivity on the  things that matter most. Imagine what you can get done with an entire team holding you accountable to your dreams.'}
-                                buttonText={'Learn More ->'}
+                                buttonText={'Learn More'}
                                 link={'#accounting'}
                             />
                             <SingleCard
                                 imgClassName={'data-card'}
                                 heading={'Data Driven'}
                                 text={'Use our tools to set goals and track your performance each week. Measure key areas such as physical health, mindfulness, courage & clarity. Use this data to gain key insights into your behavior patterns and optimize your performance.'}
-                                buttonText={'Learn More ->'}
+                                buttonText={'Learn More'}
                             />
                         </CardDeck>
                     </Col>
                 </Row>
                 <Row className='landing-section'>
-                    <h2>The System Created to Realize My Dreams, Shared with You</h2>
-                    <div>
-                        <p>Hi! I'm Andrew, digital nomad, software engineer and founder of Better Together. I realized that it was hard for me to find people that would routinely ask me the hard questions. Did I do the things that I said I was going to do? Am I living up to my potential? When I had conversations with my friends that asked the hard questions... I always felt a renewed focus and inspiration. I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can be so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.</p>
+                    <h2 className='futura-heading'>The System Created to Realize My Dreams, Shared with You</h2>
+                    <div className={'flex-div'}>
+                        <p>Hi! I'm Andrew, digital nomad, software engineer and founder of Better Together. I realized that it was hard for me to find people that would routinely ask me the hard questions. Did I do the things that I said I was going to do? Am I living up to my potential? When I had conversations with my friends that asked the hard questions... I always felt a renewed focus and inspiration.
+                            <div className='futura-heading'>Since starting the mastermind, my life has transformed.</div> I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can b e so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.
+                            I've been travelling full time since April 2018 as a digital nomad, working online as a software engineer and now as a social entrepreneur.
+                            It's truly a dream come true.  <div className='futura-heading'>I want to help as many people as possible achieve their dreams - especially if the dream is unconventional.</div>
+                            Organically, the mastermind started to grow and I realized how much we need positive accountability and community. Supporting others' dreams became a passion, and in the fall of 2018, I decided to build Better Together into a global network and make this one of my primary missions.
+                                I've built an incredible mastermind model, community and set of tools to help you achieve your goals, and I can't wait to share them with you. I want to be feel that you are sprinting full speed towards your dreams.
+                            <div className={'futura-heading'}>Humanity doesn't benefit from your success if you never grow into the person you're meant to be.</div>
+                        </p>
+                        <Image className='tavels-image' src={travels} />
                     </div>
-                        <div>
-                            <p>Since starting the mastermind, my life has transformed. I've been travelling full time since April 2018 as a digital nomad, working online as a software engineer and now as a social entrepreneur. It's truly a dream come true. I want to help as many people as possible achieve their dreams - especially if the dream is unconventional.</p>
-                        </div>
-                        <p>Organically, the mastermind started to grow and I realized how much we need positive accountability and community. Supporting others' dreams became a passion, and in the fall of 2018, I decided to build Better Together into a global network and make this one of my primary missions.
-
-                        I've built an incredible mastermind model, community and set of tools to help you achieve your goals, and I can't wait to share them with you. I want to be feel that you are sprinting full speed towards your dreams.</p>
-                            <h5>Humanity doesn't benefit from your success if you never grow into the person you're meant to be.</h5>
-
                 </Row>
                 <Jumbotron className='main-points accounting offwhite'>
                     <Row>
@@ -267,24 +263,24 @@ export default class Landing extends React.Component {
                         />
                     </Col>
                         <Col id='accounting' lg='6'>
-                            <h3>Leverage Accountability</h3>
+                            <h3 className='futura-heading'>Leverage Accountability</h3>
                             <h6>For what REALLY matters</h6>
                             <p>Why do we always get stuff done for a tough boss, often even at the expense of our own health and dreams? The boss holds you accountable with real consequences.</p>
                             <p>But a boss won't hold you to your dreams. A boss won't make sure you're writing the book, building the business or creating the art that's in your heart. That's where your tribe comes in.</p>
                             <p>Each week, we set goals around the things that matter most to us. We report to our tribe about what we've gotten done and what targets we failed to hit.</p>
                             <p>We create real consequences by assigning a money amount to each goal. If you miss a goal, you have to answer to the tribe and donate that money to charity.</p>
-                            <p>The future of the economy is self-employment. It's time to create new models of accountability.</p>
+                            <p className='futura-heading'>The future of the global economy is self-employment. It's time to create new models of accountability.</p>
                         </Col>
                         <Col lg='4'>
                             <Card bg='light'>
                                 {/*<Card.Img src="holder.js/100px270" alt="Card image" />*/}
                                 <Card.Body className='charity-card-body'>
                                     <Card.Img variant="top" src={smile}/>
-                                    <Card.Title>Total Missed Goal Donations</Card.Title>
-                                    <Card.Text className='charity-amount'>
+                                    <Card.Title className={'futura-heading'}>Total Missed Goal Donations</Card.Title>
+                                    <Card.Text className='charity-amount futura-heading'>
                                         $1000
                                     </Card.Text>
-                                    <Card.Link href="http://www.givedirectly.com">100% of Missed Goal Donations Support the Refugee Crisis</Card.Link>
+                                    <Card.Link>100% of Donations Support the Refugee Crisis in Uganda</Card.Link>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -292,7 +288,7 @@ export default class Landing extends React.Component {
                 </Jumbotron>
                 <QuoteLine
                     className={'quoteLine'}
-                    backgroundColor={'#56B1BF'}
+                    backgroundColor={'rgba(236, 30, 58, 1)'}
                     quote={'"You are the average of the five people you spend the most time with." - Jim Rohn'}
                 />
                 <Jumbotron className='main-points data-driven white'>
@@ -304,7 +300,7 @@ export default class Landing extends React.Component {
                             />
                         </Col>
                         <Col lg='6'>
-                            <h3>Data Driven Insights into You</h3>
+                            <h3 className='futura-heading'>Data Driven Insights into You</h3>
                             <h6>Take the 'woo' out of personal development</h6>
                             <p>Use our tools to rate your performance each week in key areas of life, including: focus, clarity, mindfulness, courage, productivity & energy. This data is presented in your performance dashboard - giving you key insights into the relationship between different aspects of life.</p>
                             <p>Over the long term, this data give us valuable insights into our behavior patterns. Curious about the relationship between exercise and productivity? Diet and mental clarity? So are we.</p>
@@ -317,6 +313,7 @@ export default class Landing extends React.Component {
                 </Jumbotron>
                 <QuoteLine
                     className={'quoteLine'}
+                    backgroundColor={'#53CDFA'}
                     quote={'"What gets measured, gets managed." - Peter Drucker'}
                 />
                 <Jumbotron className='main-points accounting offwhite'>
@@ -328,11 +325,11 @@ export default class Landing extends React.Component {
                             />
                         </Col>
                         <Col lg='9'>
-                            <h3>Find Your Tribe</h3>
+                            <h3 className='futura-heading'>Find Your Tribe</h3>
                             <h6>Crowd source your success</h6>
                             <p>The economy is changing. There's more remote workers, freelancers and entrepreneurs than ever before. This means we're more empowered... but also more isolated.</p>
                             <p>Your tribe is a group of people that share your struggles, dreams and values. They are a source of inspiration, information and best practices. They are your personal board of advisers.</p>
-                            <p>Someone's insight can save weeks or months of trying to figure out something on your own. Community is everything - including a strong predictor of health and success. Develop genuine relationships with a tribe of people that share your ambitions and are invested in your success.</p>
+                            <p><div className='futura-heading'>Someone's insight can save weeks or even months of trying to figure out something on your own.</div> Community is everything - including a strong predictor of health and success. Develop genuine relationships with a tribe of people that share your ambitions and are invested in your success.</p>
                             <Button href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Apply Now</Button>
                         </Col>
                     </Row>
@@ -342,8 +339,8 @@ export default class Landing extends React.Component {
                     backgroundColor={'#08708A'}
                     quote={'Collaboration is the new competition.'}
                 />
-                <Jumbotron className='white'>
-                    <h1 className={'center-h1'}>FAQ</h1>
+                <Jumbotron className='white faq'>
+                    <h1 className={'center-h1 futura-heading'}>FAQ</h1>
                     <Row>
                     <Col>
                     <Accordion defaultActiveKey="3">
@@ -564,7 +561,7 @@ export default class Landing extends React.Component {
                     </Row>
                 </Jumbotron>
                 <Row className={'testimonials offwhite'}>
-                    <h2 className={'heading'}>Member Testimonials</h2>
+                    <h2 className={'heading futura-heading'}>Member Testimonials</h2>
                     <CardDeck className='testimonial-cardDeck'>
                         <Col lg ='6'>
                             <Testimonial
@@ -582,15 +579,16 @@ export default class Landing extends React.Component {
                                 cardClassName={'testimonialCard'}
                                 heading={'Yoga Instructor & Videographer'}
                                 image={sarah}
-                                text={'“I’ve never felt so much clarity, consistency, and direction both creatively and professionally. Joining the Mastermind has made life go by slower because I use time more efficiently. With a weekly board of advisers to guide my entrepreneurial endeavors, I’m seeing a wealth of growth and learning and even entrepreneurial success with my progress. This isn’t just an investment, it’s a road map to fulfillment.”'}
-                                source={'Sarah, Yogi & Videographer'}
+                                text={'“Better Together works for me even though I dont typically seek help from mentors or professional organizations. That is the beauty - you make the group whatever you want it to be to meet your needs. Regardless of your needs, the structure it provides helps to refine focus on important life goals. But what I really appreciate is the community of like-minded individuals who are dedicated to making ourselves better. Its a genuine hour of my time that brings me clarity and support, and I couldnt be happier with its contribution to my trek towards a fulfilling life.”'}
+                                source={'Sarah'}
                                 linkText={'Learn more about Sarah'}
+                                link={'https://www.instagram.com/brunnathestunna/'}
                             />
                         </Col>
                     </CardDeck>
                 </Row>
                 <Jumbotron className='steps white'>
-                    <h1>We're Better Together</h1>
+                    <h1 className='futura-heading'>We're Better Together</h1>
                     <Row className='steps-row'>
                         <Col lg='2'>
                             <h1>1.</h1>
@@ -613,15 +611,15 @@ export default class Landing extends React.Component {
                     </Row>
                 </Jumbotron>
                 <Jumbotron>
-                    <h2>Spots are limited - reserve yours today to accelerate progress towards your dreams</h2>
-                    <h5>The network has a limit of 100 members. Reserve your spot in a global network of entrepreneurs, artists and high performers before we are closed.</h5>
+                    <h2 className='futura-heading'>Spots are limited - reserve yours today to accelerate progress towards your dreams</h2>
+                    {/*<h5>The network has a limit of 100 members. Reserve your spot in a global network of entrepreneurs, artists and high performers before we are closed.</h5>*/}
                     <Card className='testimonial-card' style={{ width: '30rem' }}>
                         <Card.Img variant="top" src={dawn} className='testimonial-image'/>
                         <Card.Body>
                             <Card.Title>Join Us</Card.Title>
                             <Card.Text>
-                                <p>Membership dues are $99 / month.</p>
-                                <p>Members are chosen selectively after an application and interview while spots available.</p>
+                                <p className={'futura-heading'}>Membership dues are $99/month.</p>
+                                <p>Members are selectively chosen.</p>
                             </Card.Text>
                             <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Reserve Your Spot</Button>
                         </Card.Body>

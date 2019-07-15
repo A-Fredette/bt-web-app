@@ -6,7 +6,7 @@ export default class Why extends React.Component {
     render() {
         return (
             <Jumbotron className='why'>
-                <h2>Why this project?</h2>
+                <h2 className={'futura-heading'}>Why this project?</h2>
 
                 <p>One of the paradoxes of modern life is that we are more safe, secure and wealthy than at any other time in history. Kings of the past would beg for the technological powers of today’s poor. For the first time in history we are safer than ever before from the threat of famine, plagues and war, but at the same time, we are seeing an increase in diseases of dissatisfaction - including suicide, depression and anxiety.</p>
 

@@ -7,7 +7,7 @@ export default class Values extends React.Component {
     render() {
         return (
             <Jumbotron className='values'>
-                <h2>Our Values</h2>
+                <h2 className='futura-heading'>Our Values</h2>
 
                 <p>No matter their particular passion, our members are committed to personal growth. A community is only as healthy as our individuals, so applicants are prioritized based on common values of:</p>
 
