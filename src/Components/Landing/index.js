@@ -69,7 +69,7 @@ QuoteLine.propTypes = {
 };
 
 const SingleCard = (props) => (
-    <Card className={props.cardClassName} style={{ width: '16rem' }}>
+    <Card className={props.cardClassName} style={{ width: 'auto' }}>
         {/*<Card.Img variant="top" src={props.image} className={props.imgClassName}/>*/}
         <FontAwesome
             name={props.fontAwesome}
@@ -141,7 +141,7 @@ FiftyFifty.propTypes = {
 };
 
 const Testimonial = (props) => (
-    <Card className={props.cardClassName} style={{ width: '30rem' }}>
+    <Card className={props.cardClassName} style={{ width: 'auto' }}>
         <Card.Img variant="top" src={props.image} className={props.imgClassName}/>
         <Card.Body>
             <Card.Title>{props.heading}</Card.Title>
@@ -178,19 +178,19 @@ export default class Landing extends React.Component {
                     // text={'Make real progress through community & accountability.'}
                 />
                 <Row className='landing-section story justify-content-md-center'>
-                    <Col  className={'text-highlight'}>
-                        <div> <h5 className='futura-heading'>There's a dream you can't ignore.</h5></div>
+                    <Col md={'8'} lg={'8'} xs={'12'} className={'text-highlight'}>
+                            <div> <h5 className='futura-heading'>There's a dream you can't ignore.</h5></div>
                         <div>
                             <p>You want a better life and know you're capable of accomplishing more... but you're not as consistent, organized and focused as you should be.</p>
                             <p>Other things keep getting in the way.</p>
-                            <p>You've tried everything... new routines... planners... courses... but nothing really sticks. </p>
+                            <p>You've tried everything... new routines... planners... courses... but nothing really sticks.</p>
                             <p>And you've been really hard on yourself because of it. Beating yourself up for missed goals and failed systems.</p>
                             <p>But you should be deeply proud of your efforts. You're putting in the effort where most people aren't.</p>
                             <p>Every system that doesn't work is one step closer to finding what does work.</p>
                                 <div className='futura-heading'>Plus, you were missing the essential ingredient: <b>community accountability.</b></div>
                         </div>
                     </Col>
-                    <Col md={4}>
+                    <Col md={'4'} lg={'4'} xs={'12'}>
                         <div className={'dreams-image'}>
                         </div>
                     </Col>
@@ -212,7 +212,7 @@ export default class Landing extends React.Component {
                     {/*</div>*/}
                 </Row>
                 <Row className='card-row'>
-                    <Col>
+                    <Col lg={'12'} md={'12'} xs={'12'}>
                         {/*<Row className='justify-content-md-center'>*/}
                         {/*        <h3>Complete Support for Your Dream</h3>*/}
                         {/*</Row>*/}
@@ -240,19 +240,31 @@ export default class Landing extends React.Component {
                         </CardDeck>
                     </Col>
                 </Row>
-                <Row className='landing-section'>
-                    <h2 className='futura-heading'>The System Created to Realize My Dreams, Shared with You</h2>
-                    <div className={'flex-div'}>
-                        <p>Hi! I'm Andrew, digital nomad, software engineer and founder of Better Together. I realized that it was hard for me to find people that would routinely ask me the hard questions. Did I do the things that I said I was going to do? Am I living up to my potential? When I had conversations with my friends that asked the hard questions... I always felt a renewed focus and inspiration.
-                            <div className='futura-heading'>Since starting the mastermind, my life has transformed.</div> I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can b e so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.
-                            I've been travelling full time since April 2018 as a digital nomad, working online as a software engineer and now as a social entrepreneur.
-                            It's truly a dream come true.  <div className='futura-heading'>I want to help as many people as possible achieve their dreams - especially if the dream is unconventional.</div>
-                            Organically, the mastermind started to grow and I realized how much we need positive accountability and community. Supporting others' dreams became a passion, and in the fall of 2018, I decided to build Better Together into a global network and make this one of my primary missions.
+                <Row className='landing-section justify-content-md-center'>
+                    <Col lg={{ span: 12 }}>
+                        <h2 className='futura-heading'>The System Created to Realize My Dreams, Shared with You</h2>
+                        <div className={'flex-div'}>
+                            <p>Hi! I'm Andrew, digital nomad, software engineer and founder of Better Together. I realized that it was hard for me to find people that would routinely ask me the hard questions. Did I do the things that I said I was going to do? Am I living up to my potential? When I had conversations with my friends that asked the hard questions... I always felt a renewed focus and inspiration.
+                                <div className='futura-heading'>Since starting the mastermind, my life has transformed.</div> I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can b e so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.
+                                I've been travelling full time since April 2018 as a digital nomad, working online as a software engineer and now as a social entrepreneur.
+                                It's truly a dream come true. <div className='futura-heading'>I want to help as many people as possible achieve their dreams - especially if the dream is unconventional.</div>
+                            </p>
+                        </div>
+                    </Col>
+                                <Col md={{ span: 12 }} lg={{ span: 12 }} xs={{ span: 0 }}>
+                                    <Image className='travels-image' src={travels} fluid/>
+                                </Col>
+                                <Col>
+                                    <div>
+                                <p>
+                                Organically, the mastermind started to grow and I realized how much we need positive accountability and community. Supporting others' dreams became a passion, and in the fall of 2018, I decided to build Better Together into a global network and make this one of my primary missions.
                                 I've built an incredible mastermind model, community and set of tools to help you achieve your goals, and I can't wait to share them with you. I want to be feel that you are sprinting full speed towards your dreams.
-                            <div className={'futura-heading'}>Humanity doesn't benefit from your success if you never grow into the person you're meant to be.</div>
-                        </p>
-                        <Image className='tavels-image' src={travels} />
-                    </div>
+                                <div className={'futura-heading'}>Humanity doesn't benefit from your success if you never grow into the person you're meant to be.</div>
+                            </p>
+                        </div>
+                    </Col>
+
+
                 </Row>
                 <Jumbotron className='main-points accounting offwhite'>
                     <Row>
@@ -342,7 +354,7 @@ export default class Landing extends React.Component {
                 <Jumbotron className='white faq'>
                     <h1 className={'center-h1 futura-heading'}>FAQ</h1>
                     <Row>
-                    <Col>
+                    <Col xs={'12'} lg={'6'}>
                     <Accordion defaultActiveKey="3">
                         <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -448,7 +460,7 @@ export default class Landing extends React.Component {
                         </Card>
                     </Accordion>
                     </Col>
-                    <Col>
+                    <Col xs={'12'} lg={'6'}>
                         <Accordion defaultActiveKey="13">
                         <Card>
                             <Accordion.Toggle as={Card.Header} eventKey="10">
@@ -613,7 +625,8 @@ export default class Landing extends React.Component {
                 <Jumbotron className={'buy'}>
                     <h2 className='futura-heading'>Spots are limited - reserve yours today to accelerate progress towards your dreams</h2>
                     {/*<h5>The network has a limit of 100 members. Reserve your spot in a global network of entrepreneurs, artists and high performers before we are closed.</h5>*/}
-                    <Card className='testimonial-card' style={{ width: '30rem' }}>
+                    <Col lg={{ span: 6, offset: 3 }} md={{ span: 6, offset: 3 }} xs={{ span: 12, offset: 0 }}>
+                    <Card className='testimonial-card' style={{ width: 'auto' }}>
                         <Card.Img variant="top" src={dawn} className='testimonial-image'/>
                         <Card.Body>
                             <Card.Title>Join Us!</Card.Title>
@@ -624,6 +637,7 @@ export default class Landing extends React.Component {
                             <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Reserve Your Spot</Button>
                         </Card.Body>
                     </Card>
+                    </Col>
                 </Jumbotron>
             </div>
         )
