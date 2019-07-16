@@ -610,13 +610,13 @@ export default class Landing extends React.Component {
                         </Col>
                     </Row>
                 </Jumbotron>
-                <Jumbotron>
+                <Jumbotron className={'buy'}>
                     <h2 className='futura-heading'>Spots are limited - reserve yours today to accelerate progress towards your dreams</h2>
                     {/*<h5>The network has a limit of 100 members. Reserve your spot in a global network of entrepreneurs, artists and high performers before we are closed.</h5>*/}
                     <Card className='testimonial-card' style={{ width: '30rem' }}>
                         <Card.Img variant="top" src={dawn} className='testimonial-image'/>
                         <Card.Body>
-                            <Card.Title>Join Us</Card.Title>
+                            <Card.Title>Join Us!</Card.Title>
                             <Card.Text>
                                 <p className={'futura-heading'}>Membership dues are $99/month.</p>
                                 <p>Members are selectively chosen.</p>

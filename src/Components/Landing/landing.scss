@@ -157,7 +157,7 @@ h6 {
       color: white;
       margin: 10px auto 0 auto;
       font-size: 4em;
-      background-color: $darkBlue;
+      background-color: #1F628F;
       border-radius: 100%;
       padding: 20px;
     }
@@ -393,11 +393,22 @@ h6 {
   }
 }
 
+.buy {
+  .card-title {
+    color: #84A9C2;
+    font-family: futura-pt-bold, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}
+
 .application-button {
   display: block;
   margin: 2em auto;
   font-size: 1.5em;
   width: 11em;
+  font-family: Lato, sans-serif;
 }
 
 .blockquote-footer {

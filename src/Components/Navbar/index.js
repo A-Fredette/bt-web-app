@@ -58,9 +58,7 @@ const NavBar = () => (
                 {/*</NavDropdown>*/}
             </Nav>
             <Form inline>
-                <Link to={ROUTES.APPLY}>
-                    <Button href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Join Us</Button>
-                </Link>
+                <Button href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Join Us</Button>
             </Form>
         </Navbar.Collapse>
     </Navbar>
