@@ -245,7 +245,7 @@ export default class Landing extends React.Component {
                         <h2 className='futura-heading'>The System Created to Realize My Dreams, Shared with You</h2>
                         <div className={'flex-div'}>
                             <p>Hi! I'm Andrew, digital nomad, software engineer and founder of Better Together. I realized that it was hard for me to find people that would routinely ask me the hard questions. Did I do the things that I said I was going to do? Am I living up to my potential? When I had conversations with my friends that asked the hard questions... I always felt a renewed focus and inspiration.
-                                <b className='futura-heading'>Since starting the mastermind, my life has transformed.</b> I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can b e so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.
+                                <b className='futura-heading'> Since starting the mastermind, my life has transformed.</b> I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can b e so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.
                                 I've been travelling full time since April 2018 as a digital nomad, working online as a software engineer and now as a social entrepreneur.
                                 It's truly a dream come true. <b className='futura-heading'>I want to help as many people as possible achieve their dreams - especially if the dream is unconventional.</b>
                             </p>
@@ -259,7 +259,7 @@ export default class Landing extends React.Component {
                                 <p>
                                 Organically, the mastermind started to grow and I realized how much we need positive accountability and community. Supporting others' dreams became a passion, and in the fall of 2018, I decided to build Better Together into a global network and make this one of my primary missions.
                                 I've built an incredible mastermind model, community and set of tools to help you achieve your goals, and I can't wait to share them with you. I want to be feel that you are sprinting full speed towards your dreams.
-                                <b className={'futura-heading'}>Humanity doesn't benefit from your success if you never grow into the person you're meant to be.</b>
+                                <b className={'futura-heading'}>    Humanity doesn't benefit from your success if you never grow into the person you're meant to be.</b>
                             </p>
                         </div>
                     </Col>
