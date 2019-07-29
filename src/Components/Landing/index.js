@@ -21,7 +21,7 @@ import sarah from '../../Assets/images/sarah.png'
 import dashboardExample from '../../Assets/images/dashboardExample.png'
 // import refugees from '../../Assets/images/refugees.jpg'
 import smile from '../../Assets/images/smile.jpg'
-import travels from '../../Assets/images/travels.png'
+import travels from '../../Assets/images/travels.jpeg'
 
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
