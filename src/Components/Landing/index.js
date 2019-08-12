@@ -173,9 +173,7 @@ export default class Landing extends React.Component {
     render() {
         return (
             <div className='landingPage'>
-                <Row>
-                    <Image className={'heroTop'} src={hero} fluid />
-                </Row>
+                <Image className={'heroTop'} src={hero} fluid />
                 <Row className='landing-section story justify-content-md-center'>
                     <Col md={'8'} lg={'8'} sm={'12' }xs={'12'} className={'text-highlight'}>
                             <div> <h5 className='futura-heading'>There's a dream you can't ignore.</h5></div>
