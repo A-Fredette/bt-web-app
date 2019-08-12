@@ -22,6 +22,7 @@ import dashboardExample from '../../Assets/images/dashboardExample.png'
 // import refugees from '../../Assets/images/refugees.jpg'
 import smile from '../../Assets/images/smile.jpg'
 import travels from '../../Assets/images/travels.jpeg'
+import hero from '../../Assets/images/hero2.jpeg'
 
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
@@ -172,13 +173,11 @@ export default class Landing extends React.Component {
     render() {
         return (
             <div className='landingPage'>
-                <FullWidth
-                    className={'heroTop'}
-                    // heading={'The mastermind network that holds you accountable to the dreams that matter most'}
-                    // text={'Make real progress through community & accountability.'}
-                />
+                <Row>
+                    <Image className={'heroTop'} src={hero} fluid />
+                </Row>
                 <Row className='landing-section story justify-content-md-center'>
-                    <Col md={'8'} lg={'8'} xs={'12'} className={'text-highlight'}>
+                    <Col md={'8'} lg={'8'} sm={'12' }xs={'12'} className={'text-highlight'}>
                             <div> <h5 className='futura-heading'>There's a dream you can't ignore.</h5></div>
                         <div>
                             <p>You want a better life and know you're capable of accomplishing more... but you're not as consistent, organized and focused as you should be.</p>
@@ -190,7 +189,7 @@ export default class Landing extends React.Component {
                                 <div className='futura-heading'>Plus, you were missing the essential ingredient: <b>community accountability.</b></div>
                         </div>
                     </Col>
-                    <Col md={'4'} lg={'4'} xs={'12'}>
+                    <Col md={'4'} lg={'4'} sm={'0'} xs={'0'}>
                         <div className={'dreams-image'}>
                         </div>
                     </Col>
@@ -630,7 +629,7 @@ export default class Landing extends React.Component {
                         <Card.Img variant="top" src={dawn} className='testimonial-image'/>
                         <Card.Body>
                             <Card.Title>Join Us!</Card.Title>
-                            <Card.Text><b className={'futura-heading'}>Membership dues are $99/month.</b> Members are selectively chosen.
+                            <Card.Text><p><b className={'futura-heading'}>Membership dues are $99/month.</b></p> Members are selectively chosen.
                             </Card.Text>
                             <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Reserve Your Spot</Button>
                         </Card.Body>

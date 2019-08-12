@@ -100,19 +100,13 @@ h6 {
   margin-bottom: 0;
 }
 .heroTop {
-  background: url('../../Assets/images/hero2.jpeg') no-repeat center;
-  background-size: auto 100%;
-  //background-size: cover;
-  //background-repeat: no-repeat;
-  //background-position: 80% 20%;
-  height: 100vh;
-  margin-bottom: 0;
   margin-top: 3em;
 
-  .heroTop-container {
-    color: #FFF;
-    text-align: center;
-  }
+
+  //.heroTop-container {
+  //  //  color: #FFF;
+  //  //  text-align: center;
+  //  //}
 
   h4 {
     font-size: 3.5em;
@@ -240,6 +234,10 @@ h6 {
         font-size: 1em;
         position: relative;
         top: -1.7em;
+
+        .futura-heading {
+          line-break: normal;
+        }
 
         .card-title {
           font-size: 1.5em;
@@ -423,4 +421,34 @@ h6 {
       margin-top: 40px;
     }
   }
+}
+
+@media only screen and (max-width: 415px) {
+  .landing-section {
+    padding: 4em 2em;
+  }
+
+  .card-row {
+    padding: 4em 0;
+  }
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .main-points {
+    h3 {
+      padding-top: 1em;
+    }
+  }
+
+    .testimonials {
+      padding: 4em 0;
+    }
+
+  .steps {
+    display: none;
+  }
+
 }
