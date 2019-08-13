@@ -14,15 +14,18 @@ import {
     Accordion
     }
     from 'react-bootstrap';
-import dawn from '../../Assets/images/dawn.jpg'
-// import mlk from '../../Assets/images/seenTheMountainTop.jpg'
-import furiosa from '../../Assets/images/furiosa.jpg'
-import sarah from '../../Assets/images/sarah.png'
-import dashboardExample from '../../Assets/images/dashboardExample.png'
-// import refugees from '../../Assets/images/refugees.jpg'
-import smile from '../../Assets/images/smile.jpg'
-import travels from '../../Assets/images/travels.jpeg'
-import hero from '../../Assets/images/hero2.jpeg'
+import dawn from '../../Assets/images/dawn.jpg';
+// import mlk from '../../Assets/images/seenTheMountainTop.jpg';
+import furiosa from '../../Assets/images/furiosa.jpg';
+import sarah from '../../Assets/images/sarah.png';
+import dashboardExample from '../../Assets/images/dashboardExample.png';
+// import refugees from '../../Assets/images/refugees.jpg';
+import smile from '../../Assets/images/smile.jpg';
+import travels from '../../Assets/images/travels.jpeg';
+import hero from '../../Assets/images/hero2.jpeg';
+import * as ROUTES from '../../Constants/routes';
+import { Link } from 'react-router-dom';
+import Form from "react-bootstrap/Form";
 
 const FullWidth = (props) => (
     <Jumbotron className={props.className}>
@@ -219,7 +222,7 @@ export default class Landing extends React.Component {
                                 heading={'Find Your Tribe'}
                                 text={"It's difficult finding people that inspire you. Let us connect you with people as driven as you. Facilitated weekly meetings with your tribe for crowd-sourcing wisdom, setting goals and accountability."}
                                 buttonText={'Learn More'}
-                                link={'#tibe'}
+                                link={'#tribe'}
                             />
                             <SingleCard
                                 fontAwesome={'link'}
@@ -233,6 +236,7 @@ export default class Landing extends React.Component {
                                 heading={'Data Driven'}
                                 text={'Use our tools to set goals and track your performance each week. Measure key areas such as physical health, mindfulness, courage & clarity. Use this data to gain key insights into your behavior patterns and optimize your performance.'}
                                 buttonText={'Learn More'}
+                                link={'#data-driven'}
                             />
                         </CardDeck>
                     </Col>
@@ -242,7 +246,7 @@ export default class Landing extends React.Component {
                         <h2 className='futura-heading'>The System Created to Realize My Dreams, Shared with You</h2>
                         <div className={'flex-div'}>
                             <p>Hi! I'm Andrew, digital nomad, software engineer and founder of Better Together. I realized that it was hard for me to find people that would routinely ask me the hard questions. Did I do the things that I said I was going to do? Am I living up to my potential? When I had conversations with my friends that asked the hard questions... I always felt a renewed focus and inspiration.
-                                <b className='futura-heading'> Since starting the mastermind, my life has transformed.</b> I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can b e so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.
+                                <b className='futura-heading'> Since starting the mastermind, my life has transformed.</b> I realized that a big part of my success comes from routinely surrounding myself with these types of people - and these types of people can be so hard to find! So I started Better Together - a private mastermind group for holding members accountable to the best versions of themselves.
                                 I've been travelling full time since April 2018 as a digital nomad, working online as a software engineer and now as a social entrepreneur.
                                 It's truly a dream come true. <b className='futura-heading'>I want to help as many people as possible achieve their dreams - especially if the dream is unconventional.</b>
                             </p>
@@ -308,7 +312,7 @@ export default class Landing extends React.Component {
                                 size='2x'
                             />
                         </Col>
-                        <Col lg='6'>
+                        <Col lg='6' id='data-driven'>
                             <h3 className='futura-heading'>Data Driven Insights into You</h3>
                             <h6>Take the 'woo' out of personal development</h6>
                             <p>Use our tools to rate your performance each week in key areas of life, including: focus, clarity, mindfulness, courage, productivity & energy. This data is presented in your performance dashboard - giving you key insights into the relationship between different aspects of life.</p>
@@ -333,13 +337,15 @@ export default class Landing extends React.Component {
                                 size='2x'
                             />
                         </Col>
-                        <Col lg='9'>
+                        <Col lg='9' id='tribe'>
                             <h3 className='futura-heading'>Find Your Tribe</h3>
                             <h6>Crowd source your success</h6>
                             <p>The economy is changing. There's more remote workers, freelancers and entrepreneurs than ever before. This means we're more empowered... but also more isolated.</p>
                             <p>Your tribe is a group of people that share your struggles, dreams and values. They are a source of inspiration, information and best practices. They are your personal board of advisers.</p>
                             <p><b className='futura-heading'>Someone's insight can save weeks or even months of trying to figure out something on your own.</b> Community is everything - including a strong predictor of health and success. Develop genuine relationships with a tribe of people that share your ambitions and are invested in your success.</p>
-                            <Button href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Apply Now</Button>
+                            <Link to={ROUTES.APPLY}>
+                                <Button>Apply Now</Button>
+                            </Link>
                         </Col>
                     </Row>
                 </Jumbotron>
@@ -629,7 +635,9 @@ export default class Landing extends React.Component {
                             <Card.Title>Join Us!</Card.Title>
                             <Card.Text><p><b className={'futura-heading'}>Membership dues are $99/month.</b></p> Members are selectively chosen.
                             </Card.Text>
-                            <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Reserve Your Spot</Button>
+                            <Link to={ROUTES.APPLY}>
+                                <Button href='#application' className='application-button'>Reserve Your Spot</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                     </Col>
