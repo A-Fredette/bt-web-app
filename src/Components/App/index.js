@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import LandingPage from '../Landing';
+import Application from '../Apply';
 import Why from '../Why';
 import Values from '../Values';
 import Founder from '../Founder';
@@ -59,6 +60,7 @@ class App extends Component {
                     <Route exact path={ROUTES.WHY} component={Why} />
                     <Route exact path={ROUTES.VALUES} component={Values} />
                     <Route exact path={ROUTES.FOUNDER} component={Founder} />
+                    <Route exact path={ROUTES.APPLY} component={Application} />
                     {/*<Route path={ROUTES.SIGN_UP} component={SignUpPage} />*/}
                     {/*<Route path={ROUTES.SIGN_IN} component={SignInPage} />*/}
                     {/*<Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />*/}

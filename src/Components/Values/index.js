@@ -2,6 +2,8 @@ import React from 'react';
 import './values.scss';
 import Jumbotron from "react-bootstrap/Jumbotron";
 import { Button } from "react-bootstrap";
+import * as ROUTES from '../../Constants/routes';
+import { Link } from 'react-router-dom';
 
 export default class Values extends React.Component {
     render() {
@@ -22,7 +24,9 @@ export default class Values extends React.Component {
 
                 <p>Sound like you? We can't wait to meet you.</p>
 
-                <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Apply Now</Button>
+                <Link to={ROUTES.APPLY}>
+                    <Button className='application-button'>Apply Now</Button>
+                </Link>
             </Jumbotron>
         )
     }
