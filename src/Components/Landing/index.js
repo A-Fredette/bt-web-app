@@ -428,9 +428,9 @@ export default class Landing extends React.Component {
                                 <Card.Body>We have a dynamic pricing model based on the number of members that have already joined. Your price will never change. If you're an early adopter and join at $49/month, that will be your price for life.
 
                                     0 - 10 members: $49/month
-                                    11 - 30 members: $99/month
-                                    31 - 60 members: $149/month
-                                    61 - 100 members: $199/month
+                                    11 - 30 members: $67/month
+                                    31 - 60 members: $99/month
+                                    61 - 100 members: $149/month
 
                                     Membership dues can be paid on a monthly, quarterly or yearly basis.
 
@@ -627,7 +627,7 @@ export default class Landing extends React.Component {
                         <Card.Img variant="top" src={dawn} className='testimonial-image'/>
                         <Card.Body>
                             <Card.Title>Join Us!</Card.Title>
-                            <Card.Text><p><b className={'futura-heading'}>Membership dues are $99/month.</b></p> Members are selectively chosen.
+                            <Card.Text><p><b className={'futura-heading'}>Membership dues are $67/month.</b></p> Members are selectively chosen.
                             </Card.Text>
                             <Button className='application-button' href='https://forms.gle/ZPepfA9Kh3WdR7Wf6'>Reserve Your Spot</Button>
                         </Card.Body>
