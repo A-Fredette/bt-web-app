@@ -17,6 +17,7 @@ app.get('/*', function (req, res) {
 });
 
 app.get('/reviewresponse', (res, req) => {
+    console.log('response!!!');
     res('Response received!');
 });
 
